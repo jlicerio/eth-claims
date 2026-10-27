@@ -1,0 +1,1588 @@
+{
+ "generated": "2026-10-27T15:05:34.016Z",
+ "source": "eth-denominated only",
+ "totalEth": 49914,
+ "count": 158,
+ "pools": [
+  {
+   "key": "idex",
+   "contract": "0x2a0c0DBEcC7E4D658f48E01e3fA353F44050c208",
+   "eth": 15692.26,
+   "addresses": 119330,
+   "top": {
+    "addr": "0x6d2af065ccb60c0f7e8ec5907c961c42a3447127",
+    "eth": 946.3541233054516
+   }
+  },
+  {
+   "key": "etherdelta",
+   "contract": "0x8d12A197cB00D4747a1fe03395095ce2A5CC6819",
+   "eth": 15164.97,
+   "addresses": 243852,
+   "top": {
+    "addr": "0xa7267b534bada4f7a77251ab54e6a78444786c7c",
+    "eth": 604.2231945277363
+   }
+  },
+  {
+   "key": "powh3d",
+   "contract": "0xB3775fB83F7D12A36E0475aBdD1FCA35c091efBe",
+   "eth": 2494.83,
+   "addresses": 17269,
+   "top": {
+    "addr": "0x0d68c987edb915cc729cd754788205d5bfa5f9da",
+    "eth": 141.97407885490355
+   }
+  },
+  {
+   "key": "unknown_dex",
+   "contract": "0x4d55f76ce2dbbae7b48661bef9bd144ce0c9091b",
+   "eth": 2478.95,
+   "addresses": 2592,
+   "top": {
+    "addr": "0x4f2a5e97920f97bb5f2aec75a32144b1488412d7",
+    "eth": 385.05
+   }
+  },
+  {
+   "key": "lastwinner",
+   "contract": "0xDd9fd6b6F8f7ea932997992bbE67EabB3e316f3C",
+   "eth": 2424.22,
+   "addresses": 47666,
+   "top": {
+    "addr": "0xf3cb6f36fc55fca478da79a9d7c841463108dfda",
+    "eth": 163.41971073540756
+   }
+  },
+  {
+   "key": "old_weth",
+   "contract": "0xECF8F87f810EcF450940c9f60066b4a7a501d6A7",
+   "eth": 1511.34,
+   "addresses": 656,
+   "top": {
+    "addr": "0x9a63d185a79129fdab19b58bb631ea36a420544e",
+    "eth": 328.017
+   }
+  },
+  {
+   "key": "fomo3d_long",
+   "contract": "0xA62142888ABa8370742bE823c1782D17A0389Da1",
+   "eth": 1093.48,
+   "addresses": 14990,
+   "top": {
+    "addr": "0xdbf493e7f49b11c44cf7b3aae76ecfaee3a59814",
+    "eth": 38.81016433955683
+   }
+  },
+  {
+   "key": "ethfinex",
+   "contract": "0xaA7427D8f17D87a28F5e1ba3aDBB270bAdbe1011",
+   "eth": 929.51,
+   "addresses": 337,
+   "top": {
+    "addr": "0x6477599d5fef5441829462b35a305c9be5cde95e",
+    "eth": 560.6734642779785
+   }
+  },
+  {
+   "key": "singularx",
+   "contract": "0x9a2d163ab40f88c625fd475e807bbc3556566f80",
+   "eth": 854.95,
+   "addresses": 4813,
+   "top": {
+    "addr": "0xe7b4f120472625aac3795f1b3b1d43b43fc50b4f",
+    "eth": 113.15428896
+   }
+  },
+  {
+   "key": "gandhiji",
+   "contract": "0x167cB3F2446F829eb327344b66E271D1a7eFeC9A",
+   "eth": 765.58,
+   "addresses": 11206,
+   "top": {
+    "addr": "0x1b0f339b775cf65b57717e38a055a741c7b44ea0",
+    "eth": 47.84075183950798
+   }
+  },
+  {
+   "key": "oxo_rewards",
+   "contract": "0x02b15c47b4b516a22fd2d8b1fc662afb808a2169",
+   "eth": 735.34,
+   "addresses": 70679,
+   "top": {
+    "addr": "0x24bbf0da71ae2596a3f40377a9190d245643fc1b",
+    "eth": 9.219136777669407
+   }
+  },
+  {
+   "key": "tokenstore",
+   "contract": "0x1ce7ae555139c5ef5a57cc8d814a867ee6ee33d8",
+   "eth": 632.54,
+   "addresses": 14957,
+   "top": {
+    "addr": "0xbcf983f7bc2fb9c4a6350a3aabd604e920c0cf6b",
+    "eth": 169.22427576236373
+   }
+  },
+  {
+   "key": "switcheo_v2",
+   "contract": "0x7ee7ca6e75de79e618e88bdf80d0b1db136b22d0",
+   "eth": 410.75,
+   "addresses": 2869,
+   "top": {
+    "addr": "0xe1bcbeb7a2afbb8e2f9ecb1ab76a93115b219861",
+    "eth": 49.997470765
+   }
+  },
+  {
+   "key": "keep_bonding",
+   "contract": "0x27321f84704a599ab740281e285cc4463d89a3d5",
+   "eth": 234.42,
+   "addresses": 31,
+   "top": {
+    "addr": "0xd52bfe62a163eb4ec8fc98f06ed3f02695ae491d",
+    "eth": 195.246591162616
+   }
+  },
+  {
+   "key": "etherdelta_m0",
+   "contract": "0x4aea7cf559f67cedcad07e12ae6bc00f07e8cf65",
+   "eth": 220.38,
+   "addresses": 132,
+   "top": {
+    "addr": "0x1990b7c745e32d966ecd8035fa73c9122a60886b",
+    "eth": 109.40925
+   }
+  },
+  {
+   "key": "maker_weth",
+   "contract": "0x2956356cd2a2bf3202f771f50d3d14a367b48070",
+   "eth": 162.84,
+   "addresses": 1499,
+   "top": {
+    "addr": "0xa7d1c6947d5a372747bca5fb449e52a22fd9ff28",
+    "eth": 19.7511
+   }
+  },
+  {
+   "key": "lido_anchor_vault",
+   "contract": "0xA2F987A546D4CD1c607Ee8141276876C26b72Bdf",
+   "eth": 154.49,
+   "addresses": 290,
+   "top": {
+    "addr": "0xee2262acb1ca8aa9ccf46e9c1ae1306d4ef66fc9",
+    "eth": 24.999999990000003
+   }
+  },
+  {
+   "key": "r1_exchange",
+   "contract": "0xc7c9b856d33651cc2bcd9e0099efa85f59f78302",
+   "eth": 144.96,
+   "addresses": 238,
+   "top": {
+    "addr": "0xa671bd9dfb95aa820f581b2ece63fde790e8726d",
+    "eth": 85.70287019520751
+   }
+  },
+  {
+   "key": "zethr",
+   "contract": "0xd48b633045af65ff636f3c6edd744748351e020d",
+   "eth": 139.73,
+   "addresses": 1961,
+   "top": {
+    "addr": "0x2a73f607741ae1a91a1107c7173ee5051a95bade",
+    "eth": 31.868831043861114
+   }
+  },
+  {
+   "key": "fomo3d_ultra",
+   "contract": "0xab83d96de35bad6f234178fbb6507203488e9626",
+   "eth": 130.9,
+   "addresses": 163,
+   "top": {
+    "addr": "0xfa0cf889ba902da6e03768d01de8e6b706b7ef77",
+    "eth": 14.271789854894674
+   }
+  },
+  {
+   "key": "etherdelta_m1",
+   "contract": "0x373c55c277b866a69dc047cad488154ab9759466",
+   "eth": 122.62,
+   "addresses": 264,
+   "top": {
+    "addr": "0xcedf8ebb5ee36636816b0cc979a22efde57015d6",
+    "eth": 25.000194
+   }
+  },
+  {
+   "key": "bingo4beast_1",
+   "contract": "0x05aa2fdf9f58b426b49900834cce0565d88e52eb",
+   "eth": 119.96,
+   "addresses": 291,
+   "top": {
+    "addr": "0x27bbaf5b9f5069d65ca4b29147cc2a181cf4d4d6",
+    "eth": 59.336315791361784
+   }
+  },
+  {
+   "key": "spankchain_auction",
+   "contract": "0x4d1886daf2617cbd9e27abfd0f18a54f04f33c41",
+   "eth": 107.53,
+   "addresses": 103,
+   "top": {
+    "addr": "0xc76a0c22b3841c998fbd2f89a3ee42d510282efa",
+    "eth": 69
+   }
+  },
+  {
+   "key": "metadrop_webaverse",
+   "contract": "0x1ecb59aecf1fc5da695242c6e78c2007e775d40f",
+   "eth": 103.35,
+   "addresses": 78,
+   "top": {
+    "addr": "0x2e0fd2ddda2d582af5285c60be36047a7586bc69",
+    "eth": 27.5
+   }
+  },
+  {
+   "key": "dailydivs",
+   "contract": "0xd2bfceeab8ffa24cdf94faa2683df63df4bcbdc8",
+   "eth": 102.56,
+   "addresses": 407,
+   "top": {
+    "addr": "0xd5f9a8496f2081d029c882642fc629b3ce24ca63",
+    "eth": 88.25919704760886
+   }
+  },
+  {
+   "key": "switchdex",
+   "contract": "0xc3c12a9e63e466a3ba99e07f3ef1f38b8b81ae1b",
+   "eth": 101,
+   "addresses": 1580,
+   "top": {
+    "addr": "0x2c7df060d13a69f7d1e00755f12059a8ecf81f1a",
+    "eth": 10.001529719834306
+   }
+  },
+  {
+   "key": "remove_putin_bounty_admin_unlock",
+   "contract": "0xaf5fc45258b5d0af72031ab154bf6dfcfec74b99",
+   "eth": 100.12,
+   "addresses": 2,
+   "top": {
+    "addr": "0x34dec1e2fec2e1a09950b01c6ef9b610230395ce",
+    "eth": 100
+   }
+  },
+  {
+   "key": "presalepool_48c1",
+   "contract": "0x48c128eafc3b937fb1f97889ad174ac02b4952cb",
+   "eth": 98.48,
+   "addresses": 7,
+   "top": {
+    "addr": "0x8bfdadaef59eeb4afdda79bb367b213cbbd255b0",
+    "eth": 45.804105655623026
+   }
+  },
+  {
+   "key": "bancor_eth",
+   "contract": "0xD76b5c2A23ef78368d8E34288B5b65D616B746aE",
+   "eth": 94.52,
+   "addresses": 302,
+   "top": {
+    "addr": "0x00f672e0f4ee77c95ccf286127ee615520df2d5e",
+    "eth": 9.97670383984015
+   }
+  },
+  {
+   "key": "presalepool_f058",
+   "contract": "0xf058ee35f381a12b3a0f504025419dcaf047ce7f",
+   "eth": 91.23,
+   "addresses": 65,
+   "top": {
+    "addr": "0xb9c9213b2988474daf094e2a412cac06132c73d5",
+    "eth": 14
+   }
+  },
+  {
+   "key": "ld3d_official",
+   "contract": "0x47663541167ece0b96d9e5c60f9e470b2a20f598",
+   "eth": 86.49,
+   "addresses": 1022,
+   "top": {
+    "addr": "0x7058d04ba956227a95f62d3179571f5ffffe2bbe",
+    "eth": 6.966822139790206
+   }
+  },
+  {
+   "key": "tweetmarket",
+   "contract": "0xe14ab3ee81abe340b45bb26b1b166a7d2df22585",
+   "eth": 85.64,
+   "addresses": 1760,
+   "top": {
+    "addr": "0x7322908a8290f1bd4da3fd2f863333e803e52303",
+    "eth": 15.27900697
+   }
+  },
+  {
+   "key": "joyso",
+   "contract": "0x04f062809b244e37e7fdc21d9409469c989c2342",
+   "eth": 83.15,
+   "addresses": 524,
+   "top": {
+    "addr": "0x5867ae2d8a75ef7c68e9bd4d278e9f7f61185252",
+    "eth": 15.500732930308976
+   }
+  },
+  {
+   "key": "cryptophunks_market",
+   "contract": "0xd6c037be7fa60587e174db7a6710f7635d2971e7",
+   "eth": 81.95,
+   "addresses": 124,
+   "top": {
+    "addr": "0x1db8c87636d7c583814c3c0a07dccc8daa2e22f6",
+    "eth": 5.5
+   }
+  },
+  {
+   "key": "statusbuyer",
+   "contract": "0xcc89405e3cfd38412093840a3ac2f851dd395dfb",
+   "eth": 76.35,
+   "addresses": 14,
+   "top": {
+    "addr": "0x127ab8bbc7209722f092dbb87424100f31f1fc42",
+    "eth": 24.529171572807023
+   }
+  },
+  {
+   "key": "fomo3d_quick",
+   "contract": "0x4e8ecf79ade5e2c49b9e30d795517a81e0bf00b8",
+   "eth": 76,
+   "addresses": 1804,
+   "top": {
+    "addr": "0xf764d27ca2df1eb40467b61d5dcb55a6fd4c80fe",
+    "eth": 7.64771802117283
+   }
+  },
+  {
+   "key": "unknown_dex_5995",
+   "contract": "0x5995ca61d845e045cd1327a32707a66f7daccf6d",
+   "eth": 75.99,
+   "addresses": 354,
+   "top": {
+    "addr": "0x0ebaf5540690e0655a6cccc54cd98134a715f452",
+    "eth": 49.63
+   }
+  },
+  {
+   "key": "eks",
+   "contract": "0xe01e2a3ceafa8233021fc759e5a69863558326b6",
+   "eth": 74.69,
+   "addresses": 347,
+   "top": {
+    "addr": "0x21935251e90364885d59750d17f1c132ad1bcacb",
+    "eth": 23.189193079851865
+   }
+  },
+  {
+   "key": "zethr_main",
+   "contract": "0xb9ab8eed48852de901c13543042204c6c569b811",
+   "eth": 73.53,
+   "addresses": 507,
+   "top": {
+    "addr": "0xc8a85e29ab210d07b5f87c34dd9f6be779bda2f4",
+    "eth": 10.823602758710189
+   }
+  },
+  {
+   "key": "fomojp",
+   "contract": "0xcb47c89cb17c10b719fc5ed9665bae157cac2cb1",
+   "eth": 72.71,
+   "addresses": 714,
+   "top": {
+    "addr": "0x30b96ffcf5f97c85278d6dd1b1f3cf57fae6480e",
+    "eth": 22.859727833437717
+   }
+  },
+  {
+   "key": "ethfinex_v2",
+   "contract": "0x50cb61afa3f023d17276dcfb35abf85c710d1cff",
+   "eth": 71.74,
+   "addresses": 158,
+   "top": {
+    "addr": "0xa2b4c60a15ebe766ac8fd85c325cc18dc220b576",
+    "eth": 25.5
+   }
+  },
+  {
+   "key": "celer_ethpool",
+   "contract": "0x44e081cac2406a4efe165178c2a4d77f7a7854d4",
+   "eth": 70.26,
+   "addresses": 32,
+   "top": {
+    "addr": "0x5d1fdac24c71bc08986acfc92c1f0e5ef1aee2ae",
+    "eth": 12
+   }
+  },
+  {
+   "key": "pembicoin_ico_admin_unlock",
+   "contract": "0x5535a72556727c221c567e0fc4208c5a99dba1cc",
+   "eth": 69.24,
+   "addresses": 23,
+   "top": {
+    "addr": "0x185ce939be187707f20a2984a927d8ca3f16f06b",
+    "eth": 18.780805855
+   }
+  },
+  {
+   "key": "bingo4beast_2",
+   "contract": "0x4fb7d68e0116f35ade131b6535b2db1027bf7650",
+   "eth": 55.94,
+   "addresses": 519,
+   "top": {
+    "addr": "0x4faa42f5e3a92699aea391f51df95e75ed9425db",
+    "eth": 13.387676100739375
+   }
+  },
+  {
+   "key": "veil_ether",
+   "contract": "0x53b04999c1ff2d77fcdde98935bb936a67209e4c",
+   "eth": 55.6,
+   "addresses": 362,
+   "top": {
+    "addr": "0x58a800ed9a0243b8b61d7e6ff33cf013cfa1900c",
+    "eth": 6.485168333333334
+   }
+  },
+  {
+   "key": "presalepool_ff2c",
+   "contract": "0xff2c689cb750f2a7d46e7471521189ced948f965",
+   "eth": 50,
+   "addresses": 1,
+   "top": {
+    "addr": "0xf36698ba31571d596014baf3309207dd096eb8e9",
+    "eth": 50
+   }
+  },
+  {
+   "key": "cryptominertoken",
+   "contract": "0x0a97094c19295e320d5121d72139a150021a2702",
+   "eth": 45.6,
+   "addresses": 1259,
+   "top": {
+    "addr": "0x46850225040b899b730c0457cae684da69e91219",
+    "eth": 14.281024570645279
+   }
+  },
+  {
+   "key": "cryptocats_market",
+   "contract": "0x19c320b43744254ebdbcb1f1bd0e2a3dc08e01dc",
+   "eth": 45.49,
+   "addresses": 10,
+   "top": {
+    "addr": "0xd7148578159b87a9efa2f0290531b44b0f9063d1",
+    "eth": 34.88
+   }
+  },
+  {
+   "key": "ethen",
+   "contract": "0xf4c27b8b002389864ac214cb13bfeef4cc5c4e8d",
+   "eth": 43.42,
+   "addresses": 133,
+   "top": {
+    "addr": "0x8d7cdbecfbc01d98ca7fbfaf9a6cacb9bc82f032",
+    "eth": 27.466465725
+   }
+  },
+  {
+   "key": "presalepool_2018",
+   "contract": "0xf8f6e626af09b0455acd9162beb5a484724f25b5",
+   "eth": 39.2,
+   "addresses": 10,
+   "top": {
+    "addr": "0x1c8586f3b0204e95e96c55df9ef5f82ff0bea7c9",
+    "eth": 10.001
+   }
+  },
+  {
+   "key": "fomo3d_short",
+   "contract": "0x52083b1a21a5abc422b1b0bce5c43ca86ef74cd1",
+   "eth": 38.88,
+   "addresses": 355,
+   "top": {
+    "addr": "0x8537aa2911b193e5b377938a723d805bb0865670",
+    "eth": 4.533530200263045
+   }
+  },
+  {
+   "key": "presalepool_d677",
+   "contract": "0xd6770aac65a48f5715889a4cdbf30a4faf73a073",
+   "eth": 36.7,
+   "addresses": 22,
+   "top": {
+    "addr": "0x94c74b6d1b78d0d3a224bdafe06bef6608bd4454",
+    "eth": 12.458808193230903
+   }
+  },
+  {
+   "key": "confideal",
+   "contract": "0x22a97c80d7e0a9ae616737e3b8b531248f4ef91d",
+   "eth": 35.72,
+   "addresses": 66,
+   "top": {
+    "addr": "0xc53e41a56a73754512b4adf2eb58d07baca5da9a",
+    "eth": 5
+   }
+  },
+  {
+   "key": "f3dplus",
+   "contract": "0x0f90ef4e2526e3d1791862574f9fb26a0f39ec86",
+   "eth": 35.01,
+   "addresses": 670,
+   "top": {
+    "addr": "0x7c888fa88b6c03facf5e1ef078b72fc349316ecb",
+    "eth": 12.153029785345968
+   }
+  },
+  {
+   "key": "presalepool_796d",
+   "contract": "0x796dbc51b37f2d92b0af1271fd9520c8efd1be61",
+   "eth": 35,
+   "addresses": 3,
+   "top": {
+    "addr": "0xe52a18a3a94f53fd917763672ddeb3937615ab8d",
+    "eth": 29.996077393897938
+   }
+  },
+  {
+   "key": "bluechip",
+   "contract": "0xabefec93451a2cd5d864ff7b0b1604dfc60e9688",
+   "eth": 34.37,
+   "addresses": 660,
+   "top": {
+    "addr": "0x9c3a251e71297451f94e8631b4d193959e0bb7b8",
+    "eth": 10.680037077543094
+   }
+  },
+  {
+   "key": "presalepool_50c1",
+   "contract": "0x50c19ffdbda85d1a07c09f01e113a94923801d32",
+   "eth": 34.31,
+   "addresses": 2,
+   "top": {
+    "addr": "0x06d6d7c548ec6b7998b91e0bc7c374d28658adcd",
+    "eth": 25.6035
+   }
+  },
+  {
+   "key": "snowstorm_a",
+   "contract": "0xda8d7ff0d043848a689125e2c7ab87b16a0cbe81",
+   "eth": 33.34,
+   "addresses": 200,
+   "top": {
+    "addr": "0x84d89075a779fc6a5e79d083fae91c400e813ef7",
+    "eth": 29.184492277937977
+   }
+  },
+  {
+   "key": "decentrex",
+   "contract": "0xbf29685856fae1e228878dfb35b280c0adcc3b05",
+   "eth": 33.07,
+   "addresses": 544,
+   "top": {
+    "addr": "0xb02e06c48ad6263c9554f3f3de8cace42cb8ae65",
+    "eth": 11.063007714475155
+   }
+  },
+  {
+   "key": "fomo3d_long_v2",
+   "contract": "0xe336d0c8b24d8e20b6f714522f590abadb601493",
+   "eth": 32.36,
+   "addresses": 110,
+   "top": {
+    "addr": "0x9cc082db45ccc085d60b34459bdbbc5a4aea405f",
+    "eth": 24.621568032602973
+   }
+  },
+  {
+   "key": "bitcratic",
+   "contract": "0x3c020e014069df790d4f4e63fd297ba4e1c8e51f",
+   "eth": 29.95,
+   "addresses": 1163,
+   "top": {
+    "addr": "0x28b044a342b8f882f9f3c7d771bbf589ece2bc55",
+    "eth": 5
+   }
+  },
+  {
+   "key": "ethplatinum",
+   "contract": "0x510f9a9642ac14ded91629a1aad552be4b24b5f0",
+   "eth": 28.15,
+   "addresses": 336,
+   "top": {
+    "addr": "0x05731cb5fc1b68921c63ba3b39b23ebf3c3de67a",
+    "eth": 2.9010785723752948
+   }
+  },
+  {
+   "key": "acedapp",
+   "contract": "0xe65f525ec48c7e95654b9824ecc358454ea9185e",
+   "eth": 27.16,
+   "addresses": 468,
+   "top": {
+    "addr": "0xa9e0cf8232a4de1444a5b9f88673f9f6f64087bc",
+    "eth": 1.95773521501316
+   }
+  },
+  {
+   "key": "rev1",
+   "contract": "0x05215fce25902366480696f38c3093e31dbce69a",
+   "eth": 26.56,
+   "addresses": 323,
+   "top": {
+    "addr": "0xb6aca06a3588f4ce5ce33a1a7e9152892b250ca3",
+    "eth": 11.097998084873119
+   }
+  },
+  {
+   "key": "presalepool_6f40",
+   "contract": "0x6f40d96713b60d5083bc2493251907ca673de1b8",
+   "eth": 25.91,
+   "addresses": 283,
+   "top": {
+    "addr": "0x3386246a6703bb25dbe997c434fa9179927604ca",
+    "eth": 0.9430495875
+   }
+  },
+  {
+   "key": "pledge_deposit",
+   "contract": "0xf7686cf0d88b3c1b474ec76735b4e94a0c3a28f3",
+   "eth": 25.64,
+   "addresses": 15,
+   "top": {
+    "addr": "0xa37d7c95ccdfd42082e8a5785112bd33cd58482d",
+    "eth": 10
+   }
+  },
+  {
+   "key": "nexgen",
+   "contract": "0xffd31e68bf7af89df862435a138615bd60abf574",
+   "eth": 25.6,
+   "addresses": 15,
+   "top": {
+    "addr": "0x0643b6ba94e0ce44c5da34b61737a575ba93984c",
+    "eth": 9.21995528248125
+   }
+  },
+  {
+   "key": "circles_refund_vault_admin_unlock",
+   "contract": "0x93d812bf90a575d628e246b0966505a9e466f534",
+   "eth": 24.1,
+   "addresses": 14,
+   "top": {
+    "addr": "0xd93862dc2715dc4376a5104c8709250ecebc2ef1",
+    "eth": 10
+   }
+  },
+  {
+   "key": "snowstorm_b",
+   "contract": "0xb2b30d39074c52a60283a26f238abff31fcb4217",
+   "eth": 23.54,
+   "addresses": 57,
+   "top": {
+    "addr": "0xa53406ec936758685572db8e301de71107fcf11d",
+    "eth": 22.328868692812247
+   }
+  },
+  {
+   "key": "powm",
+   "contract": "0xa146240bf2c04005a743032dc0d241ec0bb2ba2b",
+   "eth": 23.53,
+   "addresses": 1715,
+   "top": {
+    "addr": "0xab61719309bf30cda379b45ac33326b24261f956",
+    "eth": 1.4269263355336328
+   }
+  },
+  {
+   "key": "fomo3d_short_v2",
+   "contract": "0x0ad3227eb47597b566ec138b3afd78cfea752de5",
+   "eth": 22.81,
+   "addresses": 833,
+   "top": {
+    "addr": "0x4e030e218c31d14e6bac1003f143848ee3d86b60",
+    "eth": 4.322391985006849
+   }
+  },
+  {
+   "key": "ageofdinos",
+   "contract": "0x19c10FFf96B80208f454034C046CCc4445Cd20ba",
+   "eth": 22.53,
+   "addresses": 73,
+   "top": {
+    "addr": "0x09f00824428ea360b879a7b3c2c9529bfc886638",
+    "eth": 0.59
+   }
+  },
+  {
+   "key": "ethpyramid",
+   "contract": "0x2fa0ac498d01632f959d3c18e38f4390b005e200",
+   "eth": 20.03,
+   "addresses": 414,
+   "top": {
+    "addr": "0xbef9124b9a1593982bb126bd97c1b8996caebade",
+    "eth": 3.853995310795092
+   }
+  },
+  {
+   "key": "pooh",
+   "contract": "0x4c29d75cc423e8adaa3839892feb66977e295829",
+   "eth": 19.98,
+   "addresses": 1178,
+   "top": {
+    "addr": "0xd69b75d5dc270e4f6cd664ac2354d12423c5ae9e",
+    "eth": 5.049110088691381
+   }
+  },
+  {
+   "key": "bitconnect_powh",
+   "contract": "0xfcd3a0f5f416e407647a7518b90354946d316059",
+   "eth": 19.08,
+   "addresses": 212,
+   "top": {
+    "addr": "0x8f281414141d3338bf26cb137183bf947d216891",
+    "eth": 6.023173981926831
+   }
+  },
+  {
+   "key": "gavcoin",
+   "contract": "0x0b8d56c26d8cf16fe1bddf4967753503d974de06",
+   "eth": 18.58,
+   "addresses": 114,
+   "top": {
+    "addr": "0x948c61d80269e56ed71e8f278e080fb70bb1b856",
+    "eth": 2.408
+   }
+  },
+  {
+   "key": "enclavesdex",
+   "contract": "0xbf45f4280cfbe7c2d2515a7d984b8c71c15e82b7",
+   "eth": 17.93,
+   "addresses": 228,
+   "top": {
+    "addr": "0x6162cb686F862fd1b7756fe9967EDB7dAf488378",
+    "eth": 2.85935371
+   }
+  },
+  {
+   "key": "ambassadors_fund",
+   "contract": "0xe9426198aec621203ba1fe07cf292b3796ba6248",
+   "eth": 17.51,
+   "addresses": 11,
+   "top": {
+    "addr": "0x0922370b85aa2ec17a0c7d069b0b57e44f8d9e61",
+    "eth": 2.34825
+   }
+  },
+  {
+   "key": "coinchangex",
+   "contract": "0x2f23228b905ceb4734eb42d9b42805296667c93b",
+   "eth": 17.37,
+   "addresses": 210,
+   "top": {
+    "addr": "0x7c354cb476438fbe7f231c5c2ae90d66c674bb3d",
+    "eth": 6.420831177454063
+   }
+  },
+  {
+   "key": "etherdelta_v3",
+   "contract": "0xc6b330df38d6ef288c953f1f2835723531073ce2",
+   "eth": 16.83,
+   "addresses": 13,
+   "top": {
+    "addr": "0xdb7534bd87abca0abf5ba539819a3cb01bf498aa",
+    "eth": 11
+   }
+  },
+  {
+   "key": "sportcrypt",
+   "contract": "0x37304b0ab297f13f5520c523102797121182fb5b",
+   "eth": 15.76,
+   "addresses": 231,
+   "top": {
+    "addr": "0x15f76bc8510b6573d4db6dbfe95eb337ac482578",
+    "eth": 3.984556350626118
+   }
+  },
+  {
+   "key": "fomo",
+   "contract": "0xaff69c67f5dbbdd088ccbc6d47cb9e0ea547e132",
+   "eth": 15.29,
+   "addresses": 209,
+   "top": {
+    "addr": "0x81a55de6b23fb7a4e4cd75193e6fce24bcf00f08",
+    "eth": 2.1499835248255708
+   }
+  },
+  {
+   "key": "just_hodl_it",
+   "contract": "0x344285b2082d9c7981241dcc160beca6057637e6",
+   "eth": 14.7,
+   "addresses": 6,
+   "top": {
+    "addr": "0x47999bc379229106aa418aca8f8d2d679fc22114",
+    "eth": 8.859431331026085
+   }
+  },
+  {
+   "key": "personabid",
+   "contract": "0xDe5D4949F445650325c7C8739610c3A979C7a6db",
+   "eth": 14.4,
+   "addresses": 55,
+   "top": {
+    "addr": "0x038ccbfd4857c9cfc2d55c30713a0b679863e329",
+    "eth": 0.29
+   }
+  },
+  {
+   "key": "game_fair",
+   "contract": "0x86ab844a067094ec2c5a4bade21fcf2aeee32122",
+   "eth": 14,
+   "addresses": 4,
+   "top": {
+    "addr": "0xa9dff09a3dc51f9b1d725fd7ac0f5fc328cc9e26",
+    "eth": 9
+   }
+  },
+  {
+   "key": "fomogame",
+   "contract": "0x86D179c28cCeb120Cd3f64930Cf1820a88B77D60",
+   "eth": 13.49,
+   "addresses": 261,
+   "top": {
+    "addr": "0x852bab46dd2dd7a585d23a79a8600c2a65fcf2e0",
+    "eth": 1.7604826183782376
+   }
+  },
+  {
+   "key": "eightherbank",
+   "contract": "0xc6e5e9c6f4f3d1667df6086e91637cc7c64a13eb",
+   "eth": 12.99,
+   "addresses": 212,
+   "top": {
+    "addr": "0xf21ab52823a626fd593c0494226fe763366f6c3a",
+    "eth": 4.311087023371745
+   }
+  },
+  {
+   "key": "ibc_lottery",
+   "contract": "0xc5aafe85775fe97bee49d16cc4f38aaf8dbf20c5",
+   "eth": 12.36,
+   "addresses": 8,
+   "top": {
+    "addr": "0xa92fbe25a9e276f6b845d62faa88dbf0999f8007",
+    "eth": 4.038166626881108
+   }
+  },
+  {
+   "key": "foreground",
+   "contract": "0x943e99d9efd4b44d808f6c83373a9a2c1e15e0f8",
+   "eth": 12.14,
+   "addresses": 18,
+   "top": {
+    "addr": "0x7af49f444a59c39722fffbfd3d26f7825db42f42",
+    "eth": 4.98
+   }
+  },
+  {
+   "key": "unagii",
+   "contract": "0x77607588222e01bf892a29Abab45796A2047fc7b",
+   "eth": 11.71,
+   "addresses": 26,
+   "top": {
+    "addr": "0xb94294a7be1ad4c9206aa60fe42992eac0a325cd",
+    "eth": 10.261339
+   }
+  },
+  {
+   "key": "contribution_pool",
+   "contract": "0xa812137eff2b368d0b2880a39b609fb60c426850",
+   "eth": 10.61,
+   "addresses": 1,
+   "top": {
+    "addr": "0x4f84b3650dbf651732a41647618e7ff94a633f09",
+    "eth": 10.6092169
+   }
+  },
+  {
+   "key": "potj",
+   "contract": "0xc28e860c9132d55a184f9af53fc85e90aa3a0153",
+   "eth": 10.56,
+   "addresses": 646,
+   "top": {
+    "addr": "0xcb714ff587e9fdf479dea9ac6299d5ac3a764b20",
+    "eth": 3.0735384378367616
+   }
+  },
+  {
+   "key": "dada",
+   "contract": "0x068696a3cf3c4676b65f1c9975dd094260109d02",
+   "eth": 10.18,
+   "addresses": 18,
+   "top": {
+    "addr": "0x31acdbf193cda6902c7a4d8257ce4376c61d0b82",
+    "eth": 1.6402476968244861
+   }
+  },
+  {
+   "key": "diamonddividend",
+   "contract": "0x84cc06eddb26575a7f0afd7ec2e3e98d31321397",
+   "eth": 9.12,
+   "addresses": 152,
+   "top": {
+    "addr": "0xa1052d6291a013ed55d79c32a0984c7c57b8b561",
+    "eth": 0.7780786520442977
+   }
+  },
+  {
+   "key": "redchip",
+   "contract": "0xcd2de0bd5347f617f832442ebcc1c23a4d618847",
+   "eth": 9.1,
+   "addresses": 189,
+   "top": {
+    "addr": "0x015268ec66b8c0b5fc5028bb2bb68dfb813e215a",
+    "eth": 1.8354946814444912
+   }
+  },
+  {
+   "key": "cryptocats_v1",
+   "contract": "0x9508008227b6b3391959334604677d60169ef540",
+   "eth": 8.8,
+   "addresses": 10,
+   "top": {
+    "addr": "0x50e2dac5e78b5905cb09495547452cee64426db2",
+    "eth": 2.15
+   }
+  },
+  {
+   "key": "blackgold",
+   "contract": "0xf72b0b36723f60402cccad7f4358acf2ad474c17",
+   "eth": 8.25,
+   "addresses": 507,
+   "top": {
+    "addr": "0xdfc4a58f812b02770abd93c2587b258e2eece32b",
+    "eth": 1.8608206332178894
+   }
+  },
+  {
+   "key": "swisscryptoexchange",
+   "contract": "0xbeeb655808e3bdb83b6998f09dfe1e0f2c66a9be",
+   "eth": 7.25,
+   "addresses": 8,
+   "top": {
+    "addr": "0xb54c1a7647127f61d16243e3659a2d5fc9bba4f2",
+    "eth": 5.143401
+   }
+  },
+  {
+   "key": "relayhub_v1",
+   "contract": "0xd216153c06e857cd7f72665e0af1d7d82172f494",
+   "eth": 7.07,
+   "addresses": 109,
+   "top": {
+    "addr": "0x6a343113c4e58b85585636855a364c12c83bb687",
+    "eth": 1
+   }
+  },
+  {
+   "key": "ed_fork_6_9eth",
+   "contract": "0xc5138d4bd0ec5c51b6b6bdfcb8528ad9c333af97",
+   "eth": 6.92,
+   "addresses": 218,
+   "top": {
+    "addr": "0x89ea96f77ca3d1cd99e2dac11b5b4c0e206f33ea",
+    "eth": 1.892
+   }
+  },
+  {
+   "key": "readyplayerone",
+   "contract": "0x6db943251e4126f913e9733821031791e75df713",
+   "eth": 6.76,
+   "addresses": 140,
+   "top": {
+    "addr": "0x6437f4c5822bab97af6a120950316e17970d4f96",
+    "eth": 1.5130439700912968
+   }
+  },
+  {
+   "key": "lscx",
+   "contract": "0x3da70c70b9574ff185b31d70878a8e3094603c4c",
+   "eth": 6.45,
+   "addresses": 242,
+   "top": {
+    "addr": "0xCe0F7b59FC961dce6Ad236579eEB8Afb73D1A3cd",
+    "eth": 2.004951045638
+   }
+  },
+  {
+   "key": "spw",
+   "contract": "0x586f3d9e3524eb02448691b158fdcf5ffc2c57b0",
+   "eth": 5.69,
+   "addresses": 44,
+   "top": {
+    "addr": "0x00b9fdef661ee92b32c6145378d6ea9fa9724b10",
+    "eth": 4.53272732919127
+   }
+  },
+  {
+   "key": "cxxmain",
+   "contract": "0xa4dce3845cb88a6fca0291d4eca9e5a96e75e2b4",
+   "eth": 5.55,
+   "addresses": 177,
+   "top": {
+    "addr": "0x1c96b1912fc210d6ace90c6fa507d2603132f786",
+    "eth": 0.7346975476529954
+   }
+  },
+  {
+   "key": "proofofcraiggrant",
+   "contract": "0xea61319f55b6543962fe1d7bd990ef74849fc54f",
+   "eth": 5.39,
+   "addresses": 349,
+   "top": {
+    "addr": "0x456971923e6ce172c4747d1308ad3d7be958e18b",
+    "eth": 4.228187517166702
+   }
+  },
+  {
+   "key": "familyonly",
+   "contract": "0xbedde30d3532165843f07b1b0e3e90fddbb75918",
+   "eth": 5.37,
+   "addresses": 234,
+   "top": {
+    "addr": "0x25054f27c9972b341aee6c0d373a652566075431",
+    "eth": 1.1291399030180547
+   }
+  },
+  {
+   "key": "etherc",
+   "contract": "0xd8d48e52f39ab2d169c8b562c53589e6c71ac4d3",
+   "eth": 4.78,
+   "addresses": 843,
+   "top": {
+    "addr": "0x4c89d41bb6e2417eee41695e4271d31dd8d08ef9",
+    "eth": 0.410291095
+   }
+  },
+  {
+   "key": "fomo3d_lightning",
+   "contract": "0x24da016c06941ec2c92be28e0a2b2e679f0d1dc7",
+   "eth": 4.73,
+   "addresses": 357,
+   "top": {
+    "addr": "0xAf83Bbdeb4854Bb87fCF55Fa1fB8e4Ef4A48E171",
+    "eth": 1.4448921621411777
+   }
+  },
+  {
+   "key": "hourglassx",
+   "contract": "0x058a144951e062fc14f310057d2fd9ef0cf5095b",
+   "eth": 4.71,
+   "addresses": 162,
+   "top": {
+    "addr": "0xb88737b4483a5022587ff86c3ca7458a22538b22",
+    "eth": 1.7619108157917065
+   }
+  },
+  {
+   "key": "divsnetwork",
+   "contract": "0x26e6c899b5a5dc1d4874d828fda515a7eb7baf00",
+   "eth": 4.54,
+   "addresses": 108,
+   "top": {
+    "addr": "0x54f9494f0624d3257a867e882146beb61de3ac5c",
+    "eth": 1.0933727204529209
+   }
+  },
+  {
+   "key": "twelvehour",
+   "contract": "0x8f6015289a64c48ccf258c21a999809fc553c3c4",
+   "eth": 4.38,
+   "addresses": 54,
+   "top": {
+    "addr": "0xa587caa71890ec309d4464ffd9c105a87705aad9",
+    "eth": 1.3843820596413643
+   }
+  },
+  {
+   "key": "e25",
+   "contract": "0xc3ad35d351b33783f27777e2ee1a4b6f96e4ee34",
+   "eth": 4.22,
+   "addresses": 102,
+   "top": {
+    "addr": "0x5ec01af45a629e87559ccc6f9af03aa6c6ed9ea7",
+    "eth": 0.6887932757931051
+   }
+  },
+  {
+   "key": "bitconnect2",
+   "contract": "0x568a693e1094b1e51e8053b2fc642da7161603f5",
+   "eth": 3.75,
+   "addresses": 128,
+   "top": {
+    "addr": "0x78a3659a09949463dc8db67483d30aba87d16590",
+    "eth": 0.4749243831457711
+   }
+  },
+  {
+   "key": "proofofcommunity",
+   "contract": "0x1739e311ddbf1efdfbc39b74526fd8b600755ada",
+   "eth": 3.68,
+   "addresses": 207,
+   "top": {
+    "addr": "0xd1f6dd636a0614a585f97614cce6f4af3be6bcda",
+    "eth": 0.698139324919074
+   }
+  },
+  {
+   "key": "ethdiamond",
+   "contract": "0xca1cc76be1f5e5ee492859d8463653cb231991bc",
+   "eth": 3.57,
+   "addresses": 203,
+   "top": {
+    "addr": "0x5f4290c065b156589e280c4e7f6182fa881f2366",
+    "eth": 0.7035143034283573
+   }
+  },
+  {
+   "key": "powtf",
+   "contract": "0x702392282255f8c0993dbbbb148d80d2ef6795b1",
+   "eth": 3.35,
+   "addresses": 364,
+   "top": {
+    "addr": "0xd5ea7934d18ac6d97095c65030f87f9dcb1f96f2",
+    "eth": 0.8901172535673134
+   }
+  },
+  {
+   "key": "lynia",
+   "contract": "0xecfae6f958f7ab15bdf171eeefa568e41eabf641",
+   "eth": 3.16,
+   "addresses": 418,
+   "top": {
+    "addr": "0x7067f631601d6a767d939343e8fd3c9f1deed37f",
+    "eth": 0.4962084236773308
+   }
+  },
+  {
+   "key": "bitcratic_v1",
+   "contract": "0x232ba9f3b3643ab28d28ed7ee18600708d60e5fe",
+   "eth": 3.07,
+   "addresses": 68,
+   "top": {
+    "addr": "0x555609b597e58c1cf1da292bdc89618fb7b40f22",
+    "eth": 1.0006019089358986
+   }
+  },
+  {
+   "key": "ethershares",
+   "contract": "0x2c984ec9bb20b33deb84fbeedf20effda481fdc4",
+   "eth": 3.07,
+   "addresses": 65,
+   "top": {
+    "addr": "0x1a80601d37814f3c11984108d90f18c0a5b29b18",
+    "eth": 0.5154897250105966
+   }
+  },
+  {
+   "key": "pomda",
+   "contract": "0x0be5e8f107279cc2d9c3a537ed4ea669b45e443d",
+   "eth": 2.89,
+   "addresses": 65,
+   "top": {
+    "addr": "0xf8c8ebf1d2be0978367911c4bc2db9948c37a4d1",
+    "eth": 0.7035283254050294
+   }
+  },
+  {
+   "key": "etherdiamond",
+   "contract": "0x4af078e47490c0e761a3de260952d9eb4a6ad693",
+   "eth": 2.63,
+   "addresses": 69,
+   "top": {
+    "addr": "0x5b85988f0032ee818f911ec969dd9c649caa0a14",
+    "eth": 0.634794004731727
+   }
+  },
+  {
+   "key": "decentether",
+   "contract": "0x7d2d58d7add0b2d6e06fa85590b60da7741c18c9",
+   "eth": 2.54,
+   "addresses": 61,
+   "top": {
+    "addr": "0xa0603da6278ed6d64f70f7f40242002139446889",
+    "eth": 0.33222724238860063
+   }
+  },
+  {
+   "key": "presalepool_b990",
+   "contract": "0xb9906cf500d5e61b9673115151104c990a804dcb",
+   "eth": 2.5,
+   "addresses": 2,
+   "top": {
+    "addr": "0xf1d6e55efcb2d8ef1a84ed81c9d38ec36ef54415",
+    "eth": 1.5
+   }
+  },
+  {
+   "key": "marketplace",
+   "contract": "0x2f13fa06c0efd2a5c4cf2175a0467084672e648b",
+   "eth": 2.46,
+   "addresses": 313,
+   "top": {
+    "addr": "0x718B6aCa52548416e27AB38699cbc4C0Ed304b95",
+    "eth": 0.2521
+   }
+  },
+  {
+   "key": "powh_clone1",
+   "contract": "0xe1c9a03cf690256ff7738cbd508c88cf5238a535",
+   "eth": 2.29,
+   "addresses": 372,
+   "top": {
+    "addr": "0x80298ed38ebd1df0c079ad08a90747ad941cc26f",
+    "eth": 0.2849509184154813
+   }
+  },
+  {
+   "key": "redchip2",
+   "contract": "0xae384c6e68f5d697d65ed43fd53ef5ea3288f536",
+   "eth": 2.29,
+   "addresses": 246,
+   "top": {
+    "addr": "0x74c29b47ebca6dfeef2938daf27a82505954e9ea",
+    "eth": 0.5167838915349374
+   }
+  },
+  {
+   "key": "upower",
+   "contract": "0x5044ac8da9601edf970dcc91a10c5f41c5c548c0",
+   "eth": 2.25,
+   "addresses": 22,
+   "top": {
+    "addr": "0x1d85a7c26952d4a7d940573eae73f44d0d6fa76d",
+    "eth": 0.9184194793421911
+   }
+  },
+  {
+   "key": "bitox",
+   "contract": "0xb5adb233f28c86cef693451b67e1f2d41da97d21",
+   "eth": 2.18,
+   "addresses": 148,
+   "top": {
+    "addr": "0x39b6d4f41c5725b40f184601789d252b27043694",
+    "eth": 0.249980038879474
+   }
+  },
+  {
+   "key": "hourglass_clone7",
+   "contract": "0xaa4ec8484e89bed69570825688789589d38eea5e",
+   "eth": 2.14,
+   "addresses": 68,
+   "top": {
+    "addr": "0xdf1ce4d6ce971d0b78aa1045055882a932e6f815",
+    "eth": 0.9990507304293007
+   }
+  },
+  {
+   "key": "neufund",
+   "contract": "0xb59a226a2b8a2f2b0512baa35cc348b6b213b671",
+   "eth": 2.07,
+   "addresses": 3,
+   "top": {
+    "addr": "0x38aef1de4a2458847f72a23ad217bb7fe3a5102c",
+    "eth": 1.069460659
+   }
+  },
+  {
+   "key": "omnidex",
+   "contract": "0x433e631ac0c03e49ca034dbf5543964c80c6b391",
+   "eth": 1.77,
+   "addresses": 153,
+   "top": {
+    "addr": "0x326fb3a0ab3f7c090b3a366d578d1b62d1e278b4",
+    "eth": 0.82807672576846
+   }
+  },
+  {
+   "key": "furious",
+   "contract": "0xb0c4382d4355cdfe94a132fadf92a509b1e25939",
+   "eth": 1.63,
+   "addresses": 155,
+   "top": {
+    "addr": "0x9e5b1c39f7880f72cc2d15343d9108d9150db300",
+    "eth": 0.7999719998873996
+   }
+  },
+  {
+   "key": "hourglass_clone6",
+   "contract": "0x77b541f90ecfa09f854209eefeca24c295050e2e",
+   "eth": 1.52,
+   "addresses": 27,
+   "top": {
+    "addr": "0xb373f6ee4cefefd085dbc0cbab12c682c676e63b",
+    "eth": 0.5891357958834388
+   }
+  },
+  {
+   "key": "fairexchange",
+   "contract": "0xde2b11b71ad892ac3e47ce99d107788d65fe764e",
+   "eth": 1.48,
+   "addresses": 129,
+   "top": {
+    "addr": "0x861daea6d72e3fd3a0defa9707858c995a30d199",
+    "eth": 0.40807273381825243
+   }
+  },
+  {
+   "key": "lockedin",
+   "contract": "0xdb4837c9d84315abcde80a865f15178f86db3966",
+   "eth": 1.44,
+   "addresses": 146,
+   "top": {
+    "addr": "0x5eb06e26574118eab4e4548238e2f77e9354b11d",
+    "eth": 0.5533215738215843
+   }
+  },
+  {
+   "key": "neutrino81",
+   "contract": "0x897d6c6772b85bf25b46c6f6da454133478ea6ab",
+   "eth": 1.34,
+   "addresses": 124,
+   "top": {
+    "addr": "0x3c980bb7be9250adcaf441f2081d514c9719abb2",
+    "eth": 0.13166853580863036
+   }
+  },
+  {
+   "key": "ethernext",
+   "contract": "0x499197314f9903a1ba9bed7ee54cd9eee5900e49",
+   "eth": 1.32,
+   "addresses": 83,
+   "top": {
+    "addr": "0x64E88dFF4c882cA32bB20c9226d04bb335609C94",
+    "eth": 0.5348148469784172
+   }
+  },
+  {
+   "key": "vuepay",
+   "contract": "0xcba6f10d1147b2c5a3d8d8cbd93c373b31c6c2c8",
+   "eth": 1.21,
+   "addresses": 4,
+   "top": {
+    "addr": "0x17bcefc1f6afeb3e849558fa8917e464ddb0eaf0",
+    "eth": 0.58
+   }
+  },
+  {
+   "key": "polarisdex",
+   "contract": "0x25066b77ae6174d372a9fe2b1d7886a2be150e9b",
+   "eth": 1.16,
+   "addresses": 59,
+   "top": {
+    "addr": "0xa06a6C5289a2168Da404112e9D5F418A55bB4e7B",
+    "eth": 0.21513105074708092
+   }
+  },
+  {
+   "key": "seeddex_v3",
+   "contract": "0xcf25ebd54120cf2e4137fab0a91a7f7403a5debf",
+   "eth": 1.15,
+   "addresses": 52,
+   "top": {
+    "addr": "0xcf250d7e539399d409fa05f4e97c4c1a740e9d3c",
+    "eth": 0.40445
+   }
+  },
+  {
+   "key": "seeddex_v2",
+   "contract": "0xd4cc0cda97ec567235b7019c655ec75cd361f712",
+   "eth": 1.14,
+   "addresses": 6,
+   "top": {
+    "addr": "0xB1d799D3B2Af68e92baD865cCa8E1F303B7D4654",
+    "eth": 1
+   }
+  },
+  {
+   "key": "stronghold",
+   "contract": "0x7e7e645e9121dddaf87d0434feb9f113d1dbbb41",
+   "eth": 1.1,
+   "addresses": 382,
+   "top": {
+    "addr": "0x708bCe6709399ba3B8777C7cfe99Dd39D745790b",
+    "eth": 0.256020720181587
+   }
+  },
+  {
+   "key": "ethmall",
+   "contract": "0x2b44d68555899dbc1ab0892e7330476183dbc932",
+   "eth": 1.03,
+   "addresses": 23,
+   "top": {
+    "addr": "0x0229E6d713a7bEd6bAa89E30b0a03be85702A75c",
+    "eth": 0.36399957122
+   }
+  },
+  {
+   "key": "bitconnect3",
+   "contract": "0x38e219ee67a5e1536c5a89fec2da0d69c254cac4",
+   "eth": 0.9,
+   "addresses": 36,
+   "top": {
+    "addr": "0x652cbb4cfc676c8c3031df74ad255d218a777a96",
+    "eth": 0.7120515812602812
+   }
+  },
+  {
+   "key": "extoke",
+   "contract": "0x97c9e0eccc27efef7330e89a8c9414623ba2ee0f",
+   "eth": 0.9,
+   "addresses": 83,
+   "top": {
+    "addr": "0x11ccdecea3aae58fd9f3d996d0fa0c89d71be31c",
+    "eth": 0.21997976
+   }
+  },
+  {
+   "key": "algodex",
+   "contract": "0x4bc78f6619991b029b867b6d88d39c196332aba3",
+   "eth": 0.84,
+   "addresses": 3,
+   "top": {
+    "addr": "0x9D08C0D9dFbEB7e4f0442Aa3761eD3F0b601E943",
+    "eth": 0.770082279126458
+   }
+  },
+  {
+   "key": "ndex",
+   "contract": "0x51a2b1a38ec83b56009d5e28e6222dbb56c23c22",
+   "eth": 0.64,
+   "addresses": 90,
+   "top": {
+    "addr": "0x07527425Dd2f862815FDa590e2678910842e7ab4",
+    "eth": 0.2620891
+   }
+  },
+  {
+   "key": "powh_clone4",
+   "contract": "0xf5aa54d121dfe0d5eeb37c83aed42238f4f2c5c6",
+   "eth": 0.64,
+   "addresses": 81,
+   "top": {
+    "addr": "0x06F8029de38F43Ff60aa8F2257d435e0849c07Ff",
+    "eth": 0.10716713294529792
+   }
+  },
+  {
+   "key": "edex",
+   "contract": "0x4fbcfa90ac5a1f7f70b7ecc6dc1589bbe6904b02",
+   "eth": 0.54,
+   "addresses": 11,
+   "top": {
+    "addr": "0x98363b8ebB42d0D6c1E4C88778f727abFeEc999F",
+    "eth": 0.3015255299835739
+   }
+  },
+  {
+   "key": "powh_clone3",
+   "contract": "0x7b6c511a94d35b9cf9979b727335c9798edb5c64",
+   "eth": 0.51,
+   "addresses": 40,
+   "top": {
+    "addr": "0x0b46FaEcfE315c44F1DdF463aC68D1d5C3BB1912",
+    "eth": 0.2520984067306104
+   }
+  },
+  {
+   "key": "tradexone",
+   "contract": "0xf61a285edf078536a410a5fbc28013f9660e54a8",
+   "eth": 0.47,
+   "addresses": 38,
+   "top": {
+    "addr": "0xfC82Da13Ef3137febB3855158BF534E16c99a7e6",
+    "eth": 0.16924711
+   }
+  },
+  {
+   "key": "afrodex",
+   "contract": "0xe8fff15bb5e14095bfdfa8bb85d83cc900c23c56",
+   "eth": 0.45,
+   "addresses": 29,
+   "top": {
+    "addr": "0x507b08E0357851E37854903824868665335Eeb5c",
+    "eth": 0.13162124395773103
+   }
+  },
+  {
+   "key": "p4rty_dao_vault",
+   "contract": "0x9465A32618a9172b3c14d82cecdCa788dE1ef878",
+   "eth": 0.43,
+   "addresses": 55,
+   "top": {
+    "addr": "0xc812b8054dbaff50a8ce8ce5762013fe4976980d",
+    "eth": 0.07230319174475888
+   }
+  },
+  {
+   "key": "unkoin",
+   "contract": "0x5bedf488d29407bc08e77cd9ee292c2041a61c8c",
+   "eth": 0.26,
+   "addresses": 125,
+   "top": {
+    "addr": "0x833362cff67F8eFd57Cb1bc2793dCE3F1Cf0606B",
+    "eth": 0.08328158752661477
+   }
+  },
+  {
+   "key": "powh_clone2",
+   "contract": "0x34ba9c7402e1df11709c7983008b5a49d59e963f",
+   "eth": 0.23,
+   "addresses": 712,
+   "top": {
+    "addr": "0xD78F9AB0F7738BF562d22F08eb00C77727197A00",
+    "eth": 0.04928382733423923
+   }
+  },
+  {
+   "key": "spw2",
+   "contract": "0xd446a13f9b9f8bcbc3ded73764d08735561b1638",
+   "eth": 0.13,
+   "addresses": 7,
+   "top": {
+    "addr": "0xd777bc1bbec11feb1771e962c7e3664c7d7ea23e",
+    "eth": 0.08270082765868525
+   }
+  },
+  {
+   "key": "transit_refund_admin_unlock",
+   "contract": "0xc213f258f4142f53d086f9edb7a36e67eb347f63",
+   "eth": 0.11,
+   "addresses": 1,
+   "top": {
+    "addr": "0xaba60c05fd861452f17bbbcc8872ad5b8f26b322",
+    "eth": 0.1122
+   }
+  },
+  {
+   "key": "cryptosurge",
+   "contract": "0x11e165dd03c63771004f929d58b75e4aaf2d1a23",
+   "eth": 0.04,
+   "addresses": 22,
+   "top": {
+    "addr": "0xa683c1b815997a7fa38f6178c84675fc4c79ac2b",
+    "eth": 0.02488097706333952
+   }
+  }
+ ]
+}

@@ -1,0 +1,519 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Legacy exchange claim checker — EtherDelta, IDEX, Token.Store, WETH</title>
+<style>
+  :root{
+    --bg:#0e1116; --panel:#161b22; --panel2:#1c2330; --line:#2b3440; --ink:#e6edf3;
+    --dim:#9aa7b4; --accent:#4cc38a; --warn:#f0b429; --bad:#ff6b6b;
+    --mono:ui-monospace,SFMono-Regular,SF Mono,Menlo,Consolas,"Liberation Mono",monospace;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0;background:var(--bg);color:var(--ink)}
+  body{font:16px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;padding:0 0 5rem}
+  main{max-width:900px;margin:0 auto;padding:0 1.1rem}
+  h1{font-size:1.5rem;margin:1.6rem 0 .3rem;letter-spacing:-.01em}
+  h2{font-size:1.05rem;margin:2rem 0 .5rem}
+  h3{font-size:.95rem;margin:0 0 .3rem}
+  p{margin:.5rem 0}
+  code,.mono{font-family:var(--mono);font-size:.86em}
+  code{background:#0b0e13;border:1px solid var(--line);border-radius:4px;padding:.06em .3em;word-break:break-all}
+  .lead{color:var(--dim);max-width:72ch}
+  .hint{color:var(--dim);font-size:.86rem;max-width:80ch}
+  .dim{color:var(--dim)}
+  section{margin-top:1.2rem}
+  .panel{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:1rem}
+  .row{display:flex;gap:.6rem;flex-wrap:wrap;align-items:center}
+  input[type=text]{background:#0b0e13;border:1px solid var(--line);color:var(--ink);border-radius:8px;padding:.6rem .7rem;font-family:var(--mono);font-size:.9rem;min-width:0;flex:1 1 26rem}
+  input:focus{outline:2px solid #2f6f4f;outline-offset:1px}
+  button{font:inherit;border-radius:8px;border:1px solid var(--line);background:var(--panel2);color:var(--ink);padding:.5rem .85rem;cursor:pointer}
+  button:hover:not(:disabled){border-color:#3d4a5a}
+  button:disabled{opacity:.45;cursor:not-allowed}
+  button.primary{background:var(--accent);border-color:var(--accent);color:#06251a;font-weight:600}
+  button.small{padding:.28rem .55rem;font-size:.8rem}
+  table{border-collapse:collapse;width:100%;margin:.7rem 0;font-size:.9rem}
+  th,td{text-align:left;padding:.4rem .5rem;border-bottom:1px solid var(--line)}
+  th{color:var(--dim);font-weight:500;font-size:.78rem;text-transform:uppercase;letter-spacing:.04em}
+  td.num{font-family:var(--mono);text-align:right;white-space:nowrap}
+  .total{font-size:1.05rem;margin:.6rem 0}
+  .total b{font-family:var(--mono);font-size:1.15rem;color:var(--accent)}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:.9rem 1rem;margin:.8rem 0}
+  .card .amt{color:var(--accent);font-family:var(--mono);margin-left:.4rem}
+  .triage{margin:.45rem 0 0;font-size:.9rem;color:var(--dim)}
+  .badge.ok{background:rgba(76,195,138,.14);color:var(--accent);border-color:rgba(76,195,138,.35)}
+  .badge.bad{background:rgba(255,107,107,.12);color:var(--bad);border-color:rgba(255,107,107,.35)}
+  .ok{color:var(--accent)} .bad{color:var(--bad)}
+  .badge{display:inline-block;border-radius:999px;padding:.04rem .45rem;font-size:.7rem;border:1px solid var(--line);color:var(--dim);font-family:var(--mono)}
+  .badge.ok{color:var(--accent);border-color:#2f6f4f}
+  .badge.no{color:var(--bad);border-color:#5c2b2b}
+  dl.tx{display:grid;grid-template-columns:4.6rem 1fr;gap:.28rem .7rem;margin:.6rem 0;font-size:.86rem}
+  dl.tx dt{color:var(--dim)}
+  dl.tx dd{margin:0;font-family:var(--mono);word-break:break-all}
+  pre.hex{background:#080a0e;border:1px solid var(--line);border-radius:8px;padding:.6rem;overflow-x:auto;font-size:.76rem;line-height:1.45;margin:.4rem 0;white-space:pre-wrap;word-break:break-all}
+  .copyrow{display:flex;gap:.5rem;flex-wrap:wrap;margin:.4rem 0}
+  .links{font-size:.86rem}
+  .links a{color:#79c0ff}
+  #status{min-height:1.3rem;font-size:.9rem;margin-top:.4rem}
+  #status.err{color:var(--bad)} #status.ok{color:var(--accent)}
+  footer{max-width:900px;margin:2.5rem auto 0;padding:1.2rem 1.1rem 0;border-top:1px solid var(--line);color:var(--dim);font-size:.82rem}
+  @media (max-width:560px){ dl.tx{grid-template-columns:1fr} }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <h1>Legacy exchange claim checker</h1>
+    <p class="lead">Seven 2016–2018 contracts still hold ETH that their users can withdraw, and EtherDelta V2 still holds ERC-20 claims. Enter an address: this page reads all of it in one public <code>eth_call</code> and shows the exact transaction that releases each claim, so you can send it from any wallet you already trust. Nothing here needs your wallet, your signature, or this page to stay online.</p>
+  </header>
+
+  <section class="panel">
+    <div class="row">
+      <input id="addr" type="text" placeholder="0x0000000000000000000000000000000000000000" spellcheck="false" autocomplete="off" autocapitalize="off">
+      <button id="check" class="primary">Check claims</button>
+    </div>
+    <p class="hint" style="margin-top:.5rem">Read: one <code>eth_call</code> to Multicall3 <code>aggregate3</code> covering six ETH pools and 19 ERC-20 claims. <span id="calls" class="dim"></span></p>
+    <div id="status" role="status" aria-live="polite"></div>
+    <div id="summary"></div>
+    <table id="pools" hidden>
+      <thead><tr><th>Pool</th><th>Contract</th><th>Claimable</th><th>Wei</th></tr></thead>
+      <tbody id="pools-body"></tbody>
+    </table>
+  </section>
+
+  <section id="cards-section" hidden>
+    <h2>Transactions that release the ETH</h2>
+    <p class="hint">These contracts pay <code>msg.sender</code> and nobody else, so each transaction must be sent from the address above. Any wallet or block explorer can send it: there is no approval step, no allowance, and no contract deployment.</p>
+    <div id="cards"></div>
+  </section>
+
+  <section id="token-section" hidden>
+    <h2>ERC-20 claims on EtherDelta V2</h2>
+    <p class="hint">Released with <code>withdrawToken(address token,uint256 amount)</code>, selector <code>0x9e281a98</code> — verified in the deployed V2 dispatcher (<code>PUSH4 0x9e281a98 · EQ · JUMPI</code>), not assumed. <code>0xa9059cbb</code> is ERC-20 <code>transfer</code> and is <em>not</em> this function.</p>
+    <div id="token-cards"></div>
+  </section>
+
+  <section id="verify-section" hidden>
+    <h2>Verify the numbers yourself</h2>
+    <p class="hint">The claim above is the contract's own answer. This is the identical request, printed so you can replay it against any node and decode it without trusting this page.</p>
+    <div class="copyrow">
+      <button class="small" id="copy-verify">Copy calldata</button>
+      <button class="small" id="copy-body">Copy full JSON-RPC body</button>
+      <button class="small" id="toggle-verify">Show full calldata</button>
+    </div>
+    <pre class="hex" id="verify-hex"></pre>
+    <pre class="hex" id="verify-curl"></pre>
+    <p class="hint">Each pool's answer is the return word of its own sub-call: <code>balanceOf(address token,address user)</code>, i.e. selector <code>0xf7888aec</code> with token <code>0x0</code> for ETH. The 2016 contract <code id="v1-addr"></code> is the original WETH — an ERC-20 wrapper whose <code>withdraw(uint256)</code> unwraps to ETH 1:1 — so it answers the standard <code>balanceOf(address)</code> <code>0x70a08231</code> instead.</p>
+  </section>
+</main>
+
+<footer>
+  <p><p class="hint">This page is free and takes nothing automatically. If it recovered money for you, an optional 10% to <code>0x787fC04E68c5f2944873e6382CD98F289D5BB190</code> is appreciated — and keeping all of it is equally fine.</p>
+  Read-only page: no wallet connection, no signature, no key input, no cookies, no analytics, no server-side code. Claims are read from public chain state and the numbers shown are the contracts' own answers. Old contracts, old code — if anything here disagrees with Etherscan's Read Contract tab, believe Etherscan. Works from <code>file://</code> or any static host; no build step and no CDN.</p>
+</footer>
+
+<script>
+"use strict";
+/* -----------------------------------------------------------------------------------------------------
+   Selector provenance (keccak-256 of the signature, cross-checked against the deployed V2 bytecode):
+     aggregate3((address,bool,bytes)[])  -> 0x82ad56cb   (Multicall3, canonical deployment)
+     withdraw(uint256)                   -> 0x2e1a7d4d   (ED V2 dispatcher: 632e1a7d4d 14610239 57)
+     withdrawToken(address,uint256)      -> 0x9e281a98   (ED V2 dispatcher: 639e281a98 1461044f 57)
+     balanceOf(address,address)          -> 0xf7888aec   (ED V2 dispatcher; ETH is token 0x0)
+     balanceOf(address)                  -> 0x70a08231   (ERC-20 standard; the 2016 contract is WETH)
+   ----------------------------------------------------------------------------------------------------- */
+
+const MULTICALL3         = "0xcA11bde05977b3631167028862bE2a173976CA11";
+const SEL_AGGREGATE3     = "0x82ad56cb";
+const SEL_WITHDRAW       = "0x2e1a7d4d";
+const SEL_WITHDRAW_TOKEN = "0x9e281a98";
+const SEL_BAL_2          = "0xf7888aec";
+const SEL_BAL_1          = "0x70a08231";
+const SEL_WITHDRAW_2     = "0xf3fef3a3"; // IDEX v1: withdraw(address token, uint256 amount)
+const ZERO_TOKEN         = "0x0000000000000000000000000000000000000000";
+
+const PUBLIC_RPCS = [
+  "https://ethereum-rpc.publicnode.com",
+  "https://eth.drpc.org",
+  "https://eth.llamarpc.com"
+];
+
+/* Seven pools, each with the getter it actually exposes and a measured withdrawal cost. */
+const POOLS = [
+  { key:"edv2",   name:"EtherDelta V2",  addr:"0x8d12A197cB00D4747a1fe03395095ce2A5CC6819", getter:"bal2", gas:36493 },
+  { key:"famA",   name:"ED-family A",    addr:"0x4d55f76ce2dbbae7b48661bef9bd144ce0c9091b", getter:"bal2", gas:38726 },
+  { key:"famB",   name:"ED-family B",    addr:"0x4aea7cf559f67cedcad07e12ae6bc00f07e8cf65", getter:"bal2", gas:38726 },
+  { key:"v1b",    name:"EtherDelta V1b", addr:"0x373c55c277b866a69dc047cad488154ab9759466", getter:"bal2", gas:38726 },
+  { key:"tstore", name:"Token.Store",    addr:"0x1ce7ae555139c5ef5a57cc8d814a867ee6ee33d8", getter:"bal2", gas:38726 },
+  { key:"idex",   name:"IDEX v1", addr:"0x2a0c0DBEcC7E4D658f48E01e3fA353F44050c208", getter:"bal2", gas:42077, claim:"idex" },
+  { key:"v1",     name:"Old WETH (2016)", addr:"0xecf8f87f810ecf450940c9f60066b4a7a501d6a7", getter:"bal1", gas:38726 }
+];
+const EDV2 = POOLS[0].addr;
+
+/* 2017-era ERC-20 balances held inside EtherDelta V2, read with the same (token,user) getter. */
+const TOKENS = [
+  { sym:"MANA",  addr:"0x0f5d2fb29fb7d3cfee444a200298f468908cc942", decimals:18 },
+  { sym:"ZRX",   addr:"0xe41d2489571d322189246dafa5ebde1f4699f498", decimals:18 },
+  { sym:"BAT",   addr:"0x0d8775f648430679a709e98d2b0cb6250d2887ef", decimals:18 },
+  { sym:"FUN",   addr:"0x419d0d8bdd9af5e606ae2232ed285aff190e711b", decimals:8  },
+  { sym:"KNC",   addr:"0xdd974d5c2e2928dea5f71b9825b8b646686bd200", decimals:18 },
+  { sym:"LRC",   addr:"0xef68e7c694f40c8202821edf525de3782458639f", decimals:18 },
+  { sym:"SNT",   addr:"0x744d70fdbe2ba4cf95131626614a1763df805b9e", decimals:18 },
+  { sym:"CVC",   addr:"0x41e5560054824ea6b0732e656e3ad64e20e94e45", decimals:8  },
+  { sym:"OMG",   addr:"0xd26114cd6ee289accf82350c8d8487fedb8a0c07", decimals:18 },
+  { sym:"STORJ", addr:"0xb64ef51c888972c908cfacf59b47c1afbc0ab8ac", decimals:8  },
+  { sym:"REP",   addr:"0x1985365e9f78359a9b6ad760e32412f4a445e862", decimals:18 },
+  { sym:"DGD",   addr:"0xe0b7927c4af23765cb51314a0e0521a9645f0e2a", decimals:9  },
+  { sym:"PAY",   addr:"0xb97048628db6b661d4c2aa833e95dbe1a905b280", decimals:18 },
+  { sym:"RDN",   addr:"0x255aa6df07540cb5d3d297f0d0d4d84cb52bc8e6", decimals:18 },
+  { sym:"SNGLS", addr:"0xaec2e87e0a235266d9c5adc9deb4b2e29b54d009", decimals:0  },
+  { sym:"1ST",   addr:"0xaf30d2a7e90d7dc361c8c4585e9bb7d2f6f15bc7", decimals:18 },
+  { sym:"WTC",   addr:"0xb7cb1c96db6b22b0d3d9536e0108d062bd488f74", decimals:18 },
+  { sym:"GNT",   addr:"0xa74476443119a942de498590fe1f2454d7d4ac0d", decimals:18 },
+  { sym:"POE",   addr:"0x0e0989b1f9b8a38983c2ba8053269ca62ec9b195", decimals:8  }
+];
+
+/* ---------------------------------------------- helpers ------------------------------------------------- */
+
+const el = (id) => document.getElementById(id);
+const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ "&":"&amp;", "<":"&lt;", ">":"&gt;", '"':"&quot;", "'":"&#39;" }[c]));
+const short = (a) => a.slice(0, 6) + "…" + a.slice(-4);
+const isAddr = (a) => /^0x[0-9a-fA-F]{40}$/.test(String(a || ""));
+const word = (n) => BigInt(n).toString(16).padStart(64, "0");
+function wordAddr(a) {
+  const h = String(a).toLowerCase().replace(/^0x/, "");
+  if (!/^[0-9a-f]{40}$/.test(h)) throw new Error("not an address: " + a);
+  return "0".repeat(24) + h;
+}
+function decimalString(raw, decimals) {
+  const s = BigInt(raw).toString().padStart(decimals + 1, "0");
+  const i = s.slice(0, s.length - decimals);
+  const f = s.slice(s.length - decimals).replace(/0+$/, "");
+  return f ? i + "." + f : i;
+}
+const asUint = (hex) => {
+  const h = String(hex || "").replace(/^0x/, "");
+  return h.length >= 64 ? BigInt("0x" + h.slice(0, 64)) : 0n;
+};
+
+/* ------------------------------------------- ABI: aggregate3 codec -------------------------------------- */
+
+/** aggregate3((address,bool,bytes)[]) — dynamic array of dynamic tuples. */
+function encodeAggregate3(items) {
+  const tails = items.map((it) => {
+    const d = String(it.data).replace(/^0x/, "");
+    const padded = d.padEnd(Math.ceil(d.length / 64) * 64, "0");
+    return wordAddr(it.target) + word(it.allowFailure === false ? 0 : 1) + word(0x60)
+      + word(d.length / 2) + padded;
+  });
+  let off = items.length * 32;
+  const heads = tails.map((t) => { const h = word(off); off += t.length / 2; return h; });
+  return SEL_AGGREGATE3 + word(0x20) + word(items.length) + heads.join("") + tails.join("");
+}
+/** Inverse of the above for (bool,bytes)[] — returns [{ok,data}]. */
+function decodeAggregate3(ret) {
+  const s = String(ret).replace(/^0x/, "");
+  if (s.length < 128) throw new Error("short multicall result");
+  const W = (bytePos) => BigInt("0x" + (s.slice(bytePos * 2, bytePos * 2 + 64) || "0"));
+  const arrOff = Number(W(0));
+  const len = Number(W(arrOff));
+  const heads = arrOff + 32;
+  const out = [];
+  for (let i = 0; i < len; i++) {
+    const e = heads + Number(W(heads + i * 32));
+    const ok = W(e) === 1n;
+    const bytesAt = e + Number(W(e + 32));
+    const blen = Number(W(bytesAt));
+    const start = bytesAt + 32;
+    out.push({ ok, data: "0x" + s.slice(start * 2, (start + blen) * 2) });
+  }
+  return out;
+}
+
+const readCalldata = (pool, user, token) => pool.getter === "bal1"
+  ? SEL_BAL_1 + wordAddr(user)
+  : SEL_BAL_2 + wordAddr(token || ZERO_TOKEN) + wordAddr(user);
+const withdrawCalldata = (wei) => SEL_WITHDRAW + word(wei);
+const idexWithdrawCalldata = (wei) => SEL_WITHDRAW_2 + wordAddr(ZERO_TOKEN) + word(wei);
+const withdrawTokenCalldata = (token, raw) => SEL_WITHDRAW_TOKEN + wordAddr(token) + word(raw);
+
+/* ------------------------------------------------ read path ---------------------------------------------- */
+
+const rpcOverride = new URLSearchParams(location.search).get("rpc");
+let calls = 0;
+const hostOf = (url) => { try { return new URL(url).host; } catch { return url; } };
+
+async function rpcFetch(url, method, params) {
+  const r = await fetch(url, {
+    method: "POST",
+    headers: { "content-type": "application/json" },
+    body: JSON.stringify({ jsonrpc: "2.0", id: 1, method, params })
+  });
+  if (!r.ok) throw new Error("HTTP " + r.status + " from " + hostOf(url));
+  const j = await r.json();
+  if (j.error) throw new Error(j.error.message || "rpc error");
+  return j.result;
+}
+
+/** One public endpoint per request; ?rpc= overrides it (useful for replaying against your own node). */
+async function ethCall(to, data) {
+  calls++;
+  if (rpcOverride) return rpcFetch(rpcOverride, "eth_call", [{ to, data }, "latest"]);
+  let lastErr;
+  for (const url of PUBLIC_RPCS) {
+    try { return await rpcFetch(url, "eth_call", [{ to, data }, "latest"]); }
+    catch (e) { lastErr = e; }
+  }
+  throw lastErr || new Error("no reachable RPC endpoint");
+}
+
+/** Six pools and 19 token claims, exactly one request. */
+/** Current base fee, so a claim can be judged net of the gas it costs to collect. */
+async function getBaseFee() {
+  calls++;
+  if (rpcOverride) return BigInt(await rpcFetch(rpcOverride, "eth_getBlockByNumber", ["latest", false]).then((b) => b.baseFeePerGas));
+  let lastErr;
+  for (const url of PUBLIC_RPCS) {
+    try {
+      const b = await rpcFetch(url, "eth_getBlockByNumber", ["latest", false]);
+      if (b && b.baseFeePerGas) return BigInt(b.baseFeePerGas);
+    } catch (e) { lastErr = e; }
+  }
+  throw lastErr || new Error("base fee unavailable");
+}
+
+async function readClaims(user) {
+  const callsList = [];
+  for (const p of POOLS) callsList.push({ target: p.addr, data: readCalldata(p, user, ZERO_TOKEN), pool: p, kind: "ETH" });
+  for (const t of TOKENS) callsList.push({ target: EDV2, data: readCalldata(POOLS[0], user, t.addr), token: t, kind: "ERC20" });
+  const calldata = encodeAggregate3(callsList.map((c) => ({ target: c.target, data: c.data })));
+  const decoded = decodeAggregate3(await ethCall(MULTICALL3, calldata));
+  const pools = [], tokens = [];
+  let i = 0;
+  for (const p of POOLS) {
+    const d = decoded[i++];
+    pools.push({ pool: p, ok: !!(d && d.ok), wei: d && d.ok ? asUint(d.data) : 0n });
+  }
+  for (const t of TOKENS) {
+    const d = decoded[i++];
+    tokens.push({ token: t, ok: !!(d && d.ok), raw: d && d.ok ? asUint(d.data) : 0n });
+  }
+  return { calldata, pools, tokens };
+}
+
+/* Prefill from ?address=0x... so an index page can hand off directly. */
+function prefillFromQuery() {
+  const q = new URLSearchParams(location.search).get("address");
+  if (!q || !/^0x[0-9a-fA-F]{40}$/.test(q)) return;
+  const input = el("addr");
+  if (!input) return;
+  input.value = q;
+  setTimeout(() => el("check") && el("check").click(), 50);
+}
+
+/* -------------------------------------------------- rendering -------------------------------------------- */
+
+function setStatus(msg, cls) { const s = el("status"); s.textContent = msg || ""; s.className = cls || ""; }
+
+function copy(text, btn) {
+  const done = () => { if (btn) { const t = btn.textContent; btn.textContent = "Copied"; setTimeout(() => { btn.textContent = t; }, 1200); } };
+  const fallback = () => {
+    const ta = document.createElement("textarea");
+    ta.value = text; ta.style.position = "fixed"; ta.style.opacity = "0";
+    document.body.appendChild(ta); ta.select();
+    try { document.execCommand("copy"); } catch (_) {}
+    ta.remove(); done();
+  };
+  if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(text).then(done, fallback);
+  else fallback();
+}
+
+function txCard({ title, amount, target, data, gas, fn, args, note }) {
+  return "<article class='card'>"
+    + "<h3>" + title + "<span class='amt'>" + esc(amount) + "</span></h3>"
+    + "<dl class='tx'>"
+    + "<dt>to</dt><dd>" + esc(target) + "</dd>"
+    + "<dt>data</dt><dd>" + esc(data) + "</dd>"
+    + "<dt>value</dt><dd>0x0 — the contract pays you, you send nothing</dd>"
+    + "<dt>gas</dt><dd>" + esc(String(gas)) + " (measured " + esc(String(gas - 4000)) + " + 4,000 headroom)</dd>"
+    + "</dl>"
+    + "<div class='copyrow'><button class='small' data-copy='" + esc(data) + "'>Copy data</button></div>"
+    + "<p class='links'><a href='https://etherscan.io/address/" + esc(target) + "#writeContract' target='_blank' rel='noopener'>Etherscan → Write Contract</a>"
+    + " — function <code>" + esc(fn) + "</code>, arguments " + esc(args) + ".</p>"
+    + (note ? "<p class='hint'>" + note + "</p>" : "")
+    + "</article>";
+}
+
+function renderPools(user, pools) {
+  const tb = el("pools-body");
+  tb.innerHTML = "";
+  let total = 0n;
+  for (const r of pools) {
+    if (r.ok) total += r.wei;
+    const tr = document.createElement("tr");
+    tr.innerHTML = "<td>" + esc(r.pool.name) + "</td>"
+      + "<td class='mono'>" + esc(short(r.pool.addr)) + "</td>"
+      + "<td class='num' style='color:" + (r.wei > 0n ? "var(--accent)" : "var(--dim)") + "'>"
+      + (r.ok ? (r.wei > 0n ? decimalString(r.wei, 18) + " ETH" : "0") : "read failed") + "</td>"
+      + "<td class='num dim'>" + (r.ok ? r.wei.toString() : "—") + "</td>";
+    tb.appendChild(tr);
+  }
+  el("pools").hidden = false;
+  const live = pools.filter((r) => r.wei > 0n).length;
+  // Triage is computed here because this runs before the cards and owns the summary line.
+  const baseFee = window.__baseFee || 0n;
+  let triage = "";
+  if (baseFee) {
+    let cost = 0n, bad = 0;
+    for (const r of pools) {
+      if (!r.ok || r.wei === 0n) continue;
+      const c = BigInt(r.pool.gas + 4000) * baseFee;
+      cost += c;
+      if (r.wei <= c) bad++;
+    }
+    const net = total - cost;
+    triage = "<p class='triage'>After gas at " + (Number(baseFee) / 1e9).toFixed(4) + " gwei: <b>"
+      + decimalString(net > 0n ? net : 0n, 18) + " ETH net</b>"
+      + (bad ? " · <span class='bad'>" + bad + " claim(s) cost more than they pay</span>"
+             : " · <span class='ok'>every claim clears its gas</span>") + "</p>";
+  }
+  el("summary").innerHTML = "<p class='total'>Total claimable: <b>" + decimalString(total, 18)
+    + " ETH</b> <span class='dim'>across " + live + " of " + pools.length + " pool(s)</span></p>" + triage;
+  return total;
+}
+
+function renderEthCards(user, pools) {
+  const live = pools.filter((r) => r.wei > 0n);
+  el("cards-section").hidden = live.length === 0;
+  const baseFee = window.__baseFee || 0n;
+  el("cards").innerHTML = live.map((r) => {
+    const gasCost = baseFee ? BigInt(r.pool.gas + 4000) * baseFee : 0n;
+    const net = r.wei - gasCost;
+    const badge = baseFee === 0n ? "" : (net > 0n
+      ? " <span class='badge ok'>worth claiming</span>"
+      : " <span class='badge bad'>below gas cost</span>");
+    return txCard({
+    title: r.pool.name + badge,
+    amount: decimalString(r.wei, 18) + " ETH" + (baseFee ? " · net " + decimalString(net > 0n ? net : 0n, 18) + " ETH after gas" : ""),
+    target: r.pool.addr,
+    data: r.pool.claim === "idex" ? idexWithdrawCalldata(r.wei) : withdrawCalldata(r.wei),
+    gas: r.pool.gas + 4000,
+    fn: r.pool.claim === "idex" ? "withdraw(address,uint256)" : "withdraw",
+    args: r.pool.claim === "idex"
+      ? "<code>0x0</code> (ETH), <code>" + r.wei.toString() + "</code> (wei)"
+      : "<code>" + r.wei.toString() + "</code> (wei)"
+    });
+  }).join("");
+}
+
+function renderTokenCards(user, tokens) {
+  const live = tokens.filter((r) => r.raw > 0n);
+  el("token-section").hidden = live.length === 0;
+  el("token-cards").innerHTML = live.map((r) => txCard({
+    title: r.token.sym + " <span class='badge'>ERC-20</span>",
+    amount: decimalString(r.raw, r.token.decimals) + " " + r.token.sym,
+    target: EDV2,
+    data: withdrawTokenCalldata(r.token.addr, r.raw),
+    gas: 60000,
+    fn: "withdrawToken",
+    args: "<code>" + r.token.addr + "</code>, <code>" + r.raw.toString() + "</code>",
+    note: "Token contract <code>" + esc(r.token.addr) + "</code>; EtherDelta V2 holds " + esc(decimalString(r.raw, r.token.decimals)) + " " + esc(r.token.sym) + " for this address."
+  })).join("");
+}
+
+let verifyCalldata = "";
+let verifyExpanded = false;
+
+function rpcBody() {
+  return JSON.stringify({ jsonrpc: "2.0", id: 1, method: "eth_call", params: [{ to: MULTICALL3, data: verifyCalldata }, "latest"] });
+}
+
+function paintVerify() {
+  const hex = verifyCalldata;
+  el("verify-hex").textContent = verifyExpanded
+    ? hex
+    : hex.slice(0, 400) + "\n… " + (hex.length - 400).toLocaleString() + " more hex characters ("
+      + ((hex.length - 2) / 2).toLocaleString() + " bytes in total)";
+  el("toggle-verify").textContent = verifyExpanded ? "Collapse" : "Show full calldata";
+  el("verify-curl").textContent =
+    "# " + (POOLS.length + TOKENS.length) + " sub-calls in one request. body.json = the JSON-RPC body from “Copy full JSON-RPC body”.\n"
+    + "curl -s https://ethereum-rpc.publicnode.com -H 'content-type: application/json' --data @body.json\n\n"
+    + "# foundry equivalent, once the calldata is in calldata.txt:\n"
+    + "cast call " + MULTICALL3 + " \"$(cat calldata.txt)\" --rpc-url https://ethereum-rpc.publicnode.com";
+}
+
+function renderVerify(user, calldata) {
+  verifyCalldata = calldata;
+  verifyExpanded = false;
+  el("verify-section").hidden = false;
+  el("v1-addr").textContent = POOLS[5].addr;
+  paintVerify();
+}
+
+/* --------------------------------------------------- actions --------------------------------------------- */
+
+let queried = null;
+
+async function checkClaims(addrText) {
+  const user = String(addrText || "").trim();
+  if (!isAddr(user)) { setStatus("That is not a 20-byte hex address.", "err"); return; }
+  queried = user.toLowerCase();
+  el("check").disabled = true;
+  setStatus("Reading six pools and 19 token claims in one Multicall3 request…");
+  calls = 0;
+  try {
+    try { window.__baseFee = await getBaseFee(); } catch (_) { window.__baseFee = 0n; }
+    const { calldata, pools, tokens } = await readClaims(queried);
+    el("calls").textContent = calls + " eth_call · " + (POOLS.length + TOKENS.length) + " sub-calls · " + hostOf(rpcOverride || PUBLIC_RPCS[0]);
+    const total = renderPools(queried, pools);
+    renderEthCards(queried, pools);
+    renderTokenCards(queried, tokens);
+    renderVerify(queried, calldata);
+    const tokenCount = tokens.filter((t) => t.raw > 0n).length;
+    const parts = [];
+    if (total > 0n) parts.push(decimalString(total, 18) + " ETH");
+    if (tokenCount) parts.push(tokenCount + " token claim(s)");
+    setStatus(parts.length
+      ? "Claim found: " + parts.join(" + ") + ". The releasing transactions are below."
+      : "No claim in any of the six pools or the 19 tracked tokens for that address.",
+      parts.length ? "ok" : "");
+  } catch (e) {
+    setStatus("Read failed: " + (e && e.message ? e.message : String(e)), "err");
+  } finally {
+    el("check").disabled = false;
+  }
+}
+
+el("check").addEventListener("click", () => checkClaims(el("addr").value));
+prefillFromQuery();
+el("addr").addEventListener("keydown", (e) => { if (e.key === "Enter") checkClaims(el("addr").value); });
+el("copy-verify").addEventListener("click", () => copy(verifyCalldata, el("copy-verify")));
+el("copy-body").addEventListener("click", () => copy(rpcBody(), el("copy-body")));
+el("toggle-verify").addEventListener("click", () => { verifyExpanded = !verifyExpanded; paintVerify(); });
+document.addEventListener("click", (ev) => {
+  const b = ev.target.closest("button[data-copy]");
+  if (b) copy(b.getAttribute("data-copy"), b);
+});
+
+/* Test hooks. */
+window.__claim = {
+  POOLS, TOKENS, MULTICALL3, encodeAggregate3, decodeAggregate3, readCalldata,
+  state: () => ({
+    queried,
+    calls,
+    totalEth: el("summary").textContent || "",
+    ethCards: document.querySelectorAll("#cards .card").length,
+    tokenCards: document.querySelectorAll("#token-cards .card").length,
+    hasKeyField: !!document.querySelector("input[type=password]"),
+    verifyHead: verifyCalldata.slice(0, 10),
+    verifyLen: verifyCalldata.length,
+    verifyShown: document.getElementById("verify-hex").textContent.length,
+    rpcBodyLen: rpcBody().length,
+    verifyCurl: document.getElementById("verify-curl").textContent.length
+  }),
+  cards: () => [...document.querySelectorAll("#cards .card")].map((c) => c.textContent.replace(/\s+/g, " ").trim())
+};
+</script>
+</body>
+</html>

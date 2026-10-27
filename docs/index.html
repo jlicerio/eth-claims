@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Abandoned contract claims — verified index</title>
+<style>
+  :root{
+    --bg:#0e1116; --panel:#161b22; --panel2:#1c2330; --line:#2b3440; --ink:#e6edf3;
+    --dim:#9aa7b4; --accent:#4cc38a; --warn:#f0b429; --bad:#ff6b6b;
+    --mono:ui-monospace,SFMono-Regular,SF Mono,Menlo,Consolas,"Liberation Mono",monospace;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0;background:var(--bg);color:var(--ink)}
+  body{font:16px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;padding:0 0 4rem}
+  main{max-width:1080px;margin:0 auto;padding:0 1.1rem}
+  h1{font-size:1.6rem;margin:1.8rem 0 .3rem;letter-spacing:-.015em}
+  h2{font-size:1.05rem;margin:2.2rem 0 .6rem}
+  p{margin:.5rem 0}
+  code,.mono{font-family:var(--mono);font-size:.86em}
+  code{background:#0b0e13;border:1px solid var(--line);border-radius:4px;padding:.06em .3em}
+  .lead{color:var(--dim);max-width:70ch}
+  .hint{color:var(--dim);font-size:.86rem}
+  .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:.7rem;margin:1.4rem 0}
+  .stat{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:.8rem .9rem}
+  .stat b{display:block;font-size:1.35rem;letter-spacing:-.02em}
+  .stat span{color:var(--dim);font-size:.78rem;text-transform:uppercase;letter-spacing:.06em}
+  .panel{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:1rem;margin:1rem 0}
+  .row{display:flex;gap:.6rem;flex-wrap:wrap}
+  input[type=text]{flex:1 1 320px;background:#0b0e13;border:1px solid var(--line);border-radius:8px;color:var(--ink);padding:.7rem .8rem;font-family:var(--mono);font-size:.9rem}
+  input[type=text]:focus{outline:2px solid var(--accent);outline-offset:1px}
+  button{background:var(--accent);color:#08120c;border:0;border-radius:8px;padding:.7rem 1rem;font-weight:650;font-size:.92rem;cursor:pointer}
+  button.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
+  table{width:100%;border-collapse:collapse;font-size:.88rem;margin-top:.4rem}
+  th{text-align:left;color:var(--dim);font-weight:600;font-size:.72rem;text-transform:uppercase;letter-spacing:.06em;padding:.5rem .4rem;border-bottom:1px solid var(--line);position:sticky;top:0;background:var(--panel)}
+  td{padding:.45rem .4rem;border-bottom:1px solid rgba(43,52,64,.5)}
+  td.num{text-align:right;font-family:var(--mono)}
+  tbody tr:hover{background:var(--panel2)}
+  .badge{display:inline-block;font-size:.68rem;padding:.12rem .45rem;border-radius:999px;border:1px solid var(--line);color:var(--dim);white-space:nowrap}
+  .badge.ok{color:var(--accent);border-color:rgba(76,195,138,.4);background:rgba(76,195,138,.1)}
+  .badge.no{color:var(--bad);border-color:rgba(255,107,107,.4);background:rgba(255,107,107,.1)}
+  .badge.warn{color:var(--warn);border-color:rgba(240,180,41,.4);background:rgba(240,180,41,.08)}
+  .contract{color:var(--dim);font-family:var(--mono);font-size:.78rem}
+  a{color:var(--accent)}
+  footer{color:var(--dim);font-size:.84rem;margin-top:2.5rem;border-top:1px solid var(--line);padding-top:1rem}
+  @media (max-width:640px){ td.hide, th.hide{display:none} }
+</style>
+</head>
+<body>
+<main>
+  <h1>Abandoned contract claims</h1>
+  <p class="lead">An index of Ethereum contracts that still hold user funds, with the difference that matters: which claim paths have actually been <b>verified against the contract</b>. An index tells you where to look; only a simulated claim from the holder's address tells you whether it is collectable.</p>
+
+  <div class="stats">
+    <div class="stat"><b id="s-total">—</b><span>ETH claimable</span></div>
+    <div class="stat"><b id="s-pools">—</b><span>ETH-denominated pools</span></div>
+    <div class="stat"><b id="s-verified">—</b><span>verified claim paths</span></div>
+    <div class="stat"><b id="s-disproven">—</b><span>disproven</span></div>
+  </div>
+
+  <section class="panel">
+    <h2 style="margin-top:0">Check an address</h2>
+    <div class="row">
+      <input id="addr" type="text" placeholder="0x…" spellcheck="false" autocomplete="off" autocapitalize="off">
+      <button id="go">Check claims</button>
+      <button id="clear" class="ghost">Show all pools</button>
+    </div>
+    <p class="hint">Opens the read-only checker: one <code>eth_call</code>, no wallet connection, no signature. It shows the exact calldata and the net after gas for each claim.</p>
+  </section>
+
+  <section class="panel">
+    <div class="row" style="align-items:center;justify-content:space-between">
+      <h2 style="margin:.2rem 0">Pools</h2>
+      <input id="filter" type="text" placeholder="filter by name or contract" style="flex:0 1 260px;padding:.45rem .6rem;font-size:.85rem">
+    </div>
+    <table>
+      <thead><tr><th>#</th><th>Pool</th><th class="hide">Contract</th><th class="num">ETH</th><th class="num">Addresses</th><th>Claim path</th></tr></thead>
+      <tbody id="rows"><tr><td colspan="6" class="hint">loading…</td></tr></tbody>
+    </table>
+    <p class="hint" id="note"></p>
+  </section>
+
+  <footer>
+    Method: denomination check · <code>PUSH4</code> selector provenance from runtime bytecode · getter read for a specific address · <code>eth_call</code> the claim from that address · executor class (<code>owner-only</code> vs <code>third-party</code>).
+    Source and evidence: <a href="https://github.com/jlicerio/eth-claims">github.com/jlicerio/eth-claims</a>.
+    Token-denominated files are excluded from the ETH total by design; they need a per-pool rate.
+  </footer>
+</main>
+
+<script>
+const VERIFIED = {
+  idex:        { status: "ok",   label: "verified", note: "withdraw(address,uint256) 0xf3fef3a3 · 42,077 gas · simulated" },
+  etherdelta:  { status: "ok",   label: "verified", note: "withdraw(uint256) 0x2e1a7d4d · simulated" },
+  unknown_dex: { status: "ok",   label: "verified", note: "EtherDelta fork, admin payout redirect at slot 9" },
+  etherdelta_m0:{ status: "ok",  label: "verified", note: "EtherDelta v0 fork · withdraw(uint256)" },
+  etherdelta_m1:{ status: "ok",  label: "verified", note: "EtherDelta v1b · withdraw(uint256)" },
+  tokenstore:  { status: "ok",   label: "verified", note: "withdraw(uint256) 0x2e1a7d4d" },
+  old_weth:    { status: "ok",   label: "verified", note: "2016 WETH · balanceOf(address) 0x70a08231" },
+  powh3d:      { status: "ok",   label: "verified", note: "exit() 0xe9fad8ee · price_function · index overstated 38%" },
+  lastwinner:  { status: "no",   label: "disproven", note: "getter returns 0 for the indexed holder — do not quote" },
+};
+
+const el = (id) => document.getElementById(id);
+let POOLS = [];
+
+function badge(key) {
+  const v = VERIFIED[key];
+  if (!v) return '<span class="badge">unverified</span>';
+  return `<span class="badge ${v.status}">${v.label}</span>`;
+}
+
+function render(filter = "") {
+  const f = filter.toLowerCase();
+  const rows = POOLS.filter((p) => !f || p.key.includes(f) || (p.contract || "").toLowerCase().includes(f));
+  el("rows").innerHTML = rows.map((p, i) => {
+    const v = VERIFIED[p.key];
+    return `<tr>
+      <td class="num">${i + 1}</td>
+      <td><b>${p.key}</b></td>
+      <td class="hide contract">${p.contract ? p.contract.slice(0, 10) + "…" + p.contract.slice(-4) : "—"}</td>
+      <td class="num">${p.eth.toLocaleString(undefined, { maximumFractionDigits: 0 })}</td>
+      <td class="num">${p.addresses.toLocaleString()}</td>
+      <td>${badge(p.key)}${v ? `<br><span class="hint">${v.note}</span>` : ""}</td>
+    </tr>`;
+  }).join("") || '<tr><td colspan="6" class="hint">no match</td></tr>';
+  el("note").textContent = `${rows.length} of ${POOLS.length} pools shown · ${rows.reduce((s, p) => s + p.eth, 0).toLocaleString(undefined,{maximumFractionDigits:0})} ETH`;
+}
+
+fetch("pools.json").then((r) => r.json()).then((data) => {
+  POOLS = data.pools;
+  el("s-total").textContent = data.totalEth.toLocaleString() + " ETH";
+  el("s-pools").textContent = data.count;
+  el("s-verified").textContent = Object.values(VERIFIED).filter((v) => v.status === "ok").length;
+  el("s-disproven").textContent = Object.values(VERIFIED).filter((v) => v.status === "no").length;
+  render();
+}).catch(() => { el("rows").innerHTML = '<tr><td colspan="6" class="hint">could not load pools.json</td></tr>'; });
+
+el("go").addEventListener("click", () => {
+  const a = el("addr").value.trim();
+  if (!/^0x[0-9a-fA-F]{40}$/.test(a)) { el("addr").focus(); return; }
+  location.href = `checker.html?address=${a}`;
+});
+el("addr").addEventListener("keydown", (e) => { if (e.key === "Enter") el("go").click(); });
+el("filter").addEventListener("input", (e) => render(e.target.value));
+el("clear").addEventListener("click", () => { el("filter").value = ""; render(); });
+</script>
+</body>
+</html>
