@@ -1,0 +1,17 @@
+{
+ "key": "idex",
+ "contract": "0x2a0c0DBEcC7E4D658f48E01e3fA353F44050c208",
+ "contractEth": 15673.26,
+ "top": {
+  "address": "0x6d2af065ccb60c0f7e8ec5907c961c42a3447127",
+  "indexEth": 946.3541233054516
+ },
+ "contractBalanceOfTop": 946.354123,
+ "claimSimulated": true,
+ "paidToHolder": "trace_unavailable",
+ "verdict": "callable_getter_backed",
+ "claimRevert": null,
+ "gas": 42077,
+ "payoutProof": "getter",
+ "indexVsContract": 1
+}

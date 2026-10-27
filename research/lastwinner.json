@@ -1,0 +1,16 @@
+{
+ "key": "lastwinner",
+ "contract": "0xDd9fd6b6F8f7ea932997992bbE67EabB3e316f3C",
+ "contractEth": 2424.87,
+ "top": {
+  "address": "0xf3cb6f36fc55fca478da79a9d7c841463108dfda",
+  "indexEth": 163.41971073540756
+ },
+ "contractBalanceOfTop": 0,
+ "claimSimulated": true,
+ "paidToHolder": "trace_unavailable",
+ "verdict": "getter_mismatch",
+ "claimRevert": null,
+ "gas": 67955,
+ "indexVsContract": 0
+}
