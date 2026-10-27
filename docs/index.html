@@ -88,50 +88,54 @@
 </main>
 
 <script>
-const VERIFIED = {
-  idex:        { status: "ok",   label: "verified", note: "withdraw(address,uint256) 0xf3fef3a3 · 946.35 ETH sim · 42,077 gas" },
-  etherdelta:  { status: "ok",   label: "claim simulated", note: "withdraw(uint256) 0x2e1a7d4d · simulated from the 604.22 ETH holder" },
-  unknown_dex: { status: "ok",   label: "claim simulated", note: "ED fork, admin payout redirect slot 9 · 385.05 ETH sim · 39,187 gas" },
-  etherdelta_m0:{ status: "ok",  label: "claim simulated", note: "ED v0 fork · 109.41 ETH sim · 36,850 gas" },
-  etherdelta_m1:{ status: "ok",  label: "claim simulated", note: "ED v1b · 25.00 ETH sim · 36,898 gas" },
-  tokenstore:  { status: "ok",   label: "claim simulated", note: "169.22 ETH sim · 36,532 gas" },
-  old_weth:    { status: "ok",   label: "claim simulated", note: "2016 WETH · 328.02 ETH sim · 36,241 gas" },
-  powh3d:      { status: "ok",   label: "verified", note: "exit() 0xe9fad8ee · 87.83 ETH via price function · index 38% high" },
-  lastwinner:  { status: "no",   label: "disproven", note: "getter returns 0 for the indexed holder — do not quote" },
+let VERIFIED = {}; // filled from verified.json
+const TIER = (v) => {
+  if (!v) return { status: "", label: "unverified", note: "" };
+  if (v.verdict === "claim_simulated") {
+    if (v.shape && v.shape.startsWith("bal2")) {
+      return { status: "ok", label: "claim simulated", note: `${v.shape} · top holder ${v.getterEth} ETH · ${v.gas} gas` };
+    }
+    return { status: "ok", label: "claim simulated", note: `${v.shape} · WETH-style 1:1 · ${v.gas} gas` };
+  }
+  if (v.verdict === "callable_unpriced") {
+    return { status: "warn", label: "callable · token-priced", note: `zero-arg ${v.shape || "claim"} simulates, but the getter is a token balance — needs the pool price function` };
+  }
+  return { status: "no", label: "no verified shape", note: "none of the probed getter/claim pairs simulated" };
 };
 
 const el = (id) => document.getElementById(id);
 let POOLS = [];
 
 function badge(key) {
-  const v = VERIFIED[key];
-  if (!v) return '<span class="badge">unverified</span>';
-  return `<span class="badge ${v.status}">${v.label}</span>`;
+  const t = TIER(VERIFIED[key]);
+  return `<span class="badge ${t.status}">${t.label}</span>`;
 }
 
 function render(filter = "") {
   const f = filter.toLowerCase();
   const rows = POOLS.filter((p) => !f || p.key.includes(f) || (p.contract || "").toLowerCase().includes(f));
   el("rows").innerHTML = rows.map((p, i) => {
-    const v = VERIFIED[p.key];
+    const v = TIER(VERIFIED[p.key]);
     return `<tr>
       <td class="num">${i + 1}</td>
       <td><b>${p.key}</b></td>
       <td class="hide contract">${p.contract ? p.contract.slice(0, 10) + "…" + p.contract.slice(-4) : "—"}</td>
       <td class="num">${p.eth.toLocaleString(undefined, { maximumFractionDigits: 0 })}</td>
       <td class="num">${p.addresses.toLocaleString()}</td>
-      <td>${badge(p.key)}${v ? `<br><span class="hint">${v.note}</span>` : ""}</td>
+      <td>${badge(p.key)}${v.note ? `<br><span class="hint">${v.note}</span>` : ""}</td>
     </tr>`;
   }).join("") || '<tr><td colspan="6" class="hint">no match</td></tr>';
   el("note").textContent = `${rows.length} of ${POOLS.length} pools shown · ${rows.reduce((s, p) => s + p.eth, 0).toLocaleString(undefined,{maximumFractionDigits:0})} ETH`;
 }
 
-fetch("pools.json").then((r) => r.json()).then((data) => {
+Promise.all([fetch("pools.json").then((r) => r.json()), fetch("verified.json").then((r) => r.json()).catch(() => ({ pools: {} }))]).then(([data, ver]) => {
   POOLS = data.pools;
+  VERIFIED = ver.pools || {};
   el("s-total").textContent = data.totalEth.toLocaleString() + " ETH";
   el("s-pools").textContent = data.count;
-  el("s-verified").textContent = Object.values(VERIFIED).filter((v) => v.status === "ok").length;
-  el("s-disproven").textContent = Object.values(VERIFIED).filter((v) => v.status === "no").length;
+  const vals = Object.values(VERIFIED);
+  el("s-verified").textContent = vals.filter((v) => v.verdict === "claim_simulated").length;
+  el("s-disproven").textContent = vals.filter((v) => v.verdict === "no_shape").length;
   render();
 }).catch(() => { el("rows").innerHTML = '<tr><td colspan="6" class="hint">could not load pools.json</td></tr>'; });
 

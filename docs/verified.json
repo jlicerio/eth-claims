@@ -1,0 +1,1111 @@
+{
+ "generated": "2026-10-27T15:19:46.678Z",
+ "pools": {
+  "idex": {
+   "verdict": "claim_simulated",
+   "shape": "bal2+withdraw(address,uint256)",
+   "gas": 42077,
+   "contractEth": 15673.2597,
+   "getterEth": 946.354123
+  },
+  "etherdelta": {
+   "verdict": "claim_simulated",
+   "shape": "bal2+withdraw(uint256)",
+   "gas": 36918,
+   "contractEth": 15160.6317,
+   "getterEth": 604.223195
+  },
+  "powh3d": {
+   "verdict": "callable_unpriced",
+   "shape": "bal1+withdraw()",
+   "gas": 43737,
+   "contractEth": 2026.7189,
+   "getterEth": 29318.925397
+  },
+  "unknown_dex": {
+   "verdict": "claim_simulated",
+   "shape": "bal2+withdraw(uint256)",
+   "gas": 39187,
+   "contractEth": 2479.0815,
+   "getterEth": 385.05
+  },
+  "lastwinner": {
+   "verdict": "no_shape",
+   "shape": null,
+   "gas": null,
+   "contractEth": null,
+   "getterEth": null
+  },
+  "old_weth": {
+   "verdict": "claim_simulated",
+   "shape": "bal1+withdraw(uint256)",
+   "gas": 36241,
+   "contractEth": 1511.347,
+   "getterEth": 328.017
+  },
+  "fomo3d_long": {
+   "verdict": "no_shape",
+   "shape": null,
+   "gas": null,
+   "contractEth": null,
+   "getterEth": null
+  },
+  "ethfinex": {
+   "verdict": "no_shape",
+   "shape": null,
+   "gas": null,
+   "contractEth": null,
+   "getterEth": null
+  },
+  "singularx": {
+   "verdict": "claim_simulated",
+   "shape": "bal2+withdraw(uint256)",
+   "gas": 36896,
+   "contractEth": 854.9829,
+   "getterEth": 113.154289
+  },
+  "gandhiji": {
+   "verdict": "callable_unpriced",
+   "shape": "bal1+withdraw()",
+   "gas": 43737,
+   "contractEth": 658.4567,
+   "getterEth": 31011.342281
+  },
+  "oxo_rewards": {
+   "verdict": "no_shape",
+   "shape": null,
+   "gas": null,
+   "contractEth": null,
+   "getterEth": null
+  },
+  "tokenstore": {
+   "verdict": "claim_simulated",
+   "shape": "bal2+withdraw(uint256)",
+   "gas": 36532,
+   "contractEth": 632.5434,
+   "getterEth": 169.224276
+  },
+  "switcheo_v2": {
+   "verdict": "no_shape",
+   "shape": null,
+   "gas": null,
+   "contractEth": null,
+   "getterEth": null
+  },
+  "keep_bonding": {
+   "verdict": "no_shape",
+   "shape": null,
+   "gas": null,
+   "contractEth": null,
+   "getterEth": null
+  },
+  "etherdelta_m0": {
+   "verdict": "claim_simulated",
+   "shape": "bal2+withdraw(uint256)",
+   "gas": 36850,
+   "contractEth": 220.3809,
+   "getterEth": 109.40925
+  },
+  "maker_weth": {
+   "verdict": "claim_simulated",
+   "shape": "bal1+withdraw(uint256)",
+   "gas": 41279,
+   "contractEth": 162.0375,
+   "getterEth": 19.7511
+  },
+  "lido_anchor_vault": {
+   "verdict": "no_shape",
+   "shape": null,
+   "gas": null,
+   "contractEth": null,
+   "getterEth": null
+  },
+  "r1_exchange": {
+   "verdict": "no_shape",
+   "shape": null,
+   "gas": null,
+   "contractEth": null,
+   "getterEth": null
+  },
+  "zethr": {
+   "verdict": "callable_unpriced",
+   "shape": "bal1+exit()",
+   "gas": 82603,
+   "contractEth": 275.941,
+   "getterEth": 31298.010372
+  },
+  "fomo3d_ultra": {
+   "verdict": "no_shape",
+   "shape": null,
+   "gas": null,
+   "contractEth": null,
+   "getterEth": null
+  },
+  "etherdelta_m1": {
+   "verdict": "claim_simulated",
+   "shape": "bal2+withdraw(uint256)",
+   "gas": 36898,
+   "contractEth": 122.2734,
+   "getterEth": 25.000194
+  },
+  "bingo4beast_1": {
+   "verdict": "no_shape",
+   "shape": null,
+   "gas": null,
+   "contractEth": null,
+   "getterEth": null
+  },
+  "spankchain_auction": {
+   "verdict": "no_shape",
+   "shape": null,
+   "gas": null,
+   "contractEth": null,
+   "getterEth": null
+  },
+  "metadrop_webaverse": {
+   "verdict": "no_shape",
+   "shape": null,
+   "gas": null,
+   "contractEth": null,
+   "getterEth": null
+  },
+  "dailydivs": {
+   "verdict": "callable_unpriced",
+   "shape": "bal1+withdraw()",
+   "gas": 45446,
+   "contractEth": 109.6804,
+   "getterEth": 226622.875022
+  },
+  "switchdex": {
+   "verdict": "claim_simulated",
+   "shape": "bal2+withdraw(uint256)",
+   "gas": 36918,
+   "contractEth": 100.9905,
+   "getterEth": 10.00153
+  },
+  "remove_putin_bounty_admin_unlock": {
+   "verdict": "no_shape",
+   "shape": null,
+   "gas": null,
+   "contractEth": null,
+   "getterEth": null
+  },
+  "presalepool_48c1": {
+   "verdict": "no_shape",
+   "shape": null,
+   "gas": null,
+   "contractEth": null,
+   "getterEth": null
+  },
+  "bancor_eth": {
+   "verdict": "claim_simulated",
+   "shape": "bal1+withdraw(uint256)",
+   "gas": 42058,
+   "contractEth": 94.4243,
+   "getterEth": 9.976704
+  },
+  "presalepool_f058": {
+   "verdict": "no_shape",
+   "shape": null,
+   "gas": null,
+   "contractEth": null,
+   "getterEth": null
+  },
+  "ld3d_official": {
+   "verdict": "no_shape",
+   "shape": null,
+   "gas": null,
+   "contractEth": null,
+   "getterEth": null
+  },
+  "tweetmarket": {
+   "verdict": "no_shape",
+   "shape": null,
+   "gas": null,
+   "contractEth": null,
+   "getterEth": null
+  },
+  "joyso": {
+   "verdict": "no_shape",
+   "shape": null,
+   "gas": null,
+   "contractEth": null,
+   "getterEth": null
+  },
+  "cryptophunks_market": {
+   "verdict": "no_shape",
+   "shape": null,
+   "gas": null,
+   "contractEth": null,
+   "getterEth": null
+  },
+  "statusbuyer": {
+   "verdict": "no_shape",
+   "shape": null,
+   "gas": null,
+   "contractEth": null,
+   "getterEth": null
+  },
+  "fomo3d_quick": {
+   "verdict": "no_shape",
+   "shape": null,
+   "gas": null,
+   "contractEth": null,
+   "getterEth": null
+  },
+  "unknown_dex_5995": {
+   "verdict": "claim_simulated",
+   "shape": "bal2+withdraw(uint256)",
+   "gas": 44051,
+   "contractEth": 75.9803,
+   "getterEth": 49.63
+  },
+  "eks": {
+   "verdict": "callable_unpriced",
+   "shape": "bal1+withdraw()",
+   "gas": 48393,
+   "contractEth": 82.8485,
+   "getterEth": 25.7
+  },
+  "zethr_main": {
+   "verdict": "callable_unpriced",
+   "shape": "bal1+exit()",
+   "gas": 101560,
+   "contractEth": 111.6839,
+   "getterEth": 6361.589779
+  },
+  "fomojp": {
+   "verdict": "no_shape",
+   "shape": null,
+   "gas": null,
+   "contractEth": null,
+   "getterEth": null
+  },
+  "sportcrypt": {
+   "verdict": "no_shape",
+   "shape": null,
+   "gas": null,
+   "contractEth": null,
+   "getterEth": null
+  },
+  "fomo": {
+   "verdict": "no_shape",
+   "shape": null,
+   "gas": null,
+   "contractEth": null,
+   "getterEth": null
+  },
+  "just_hodl_it": {
+   "verdict": "no_shape",
+   "shape": null,
+   "gas": null,
+   "contractEth": null,
+   "getterEth": null
+  },
+  "personabid": {
+   "verdict": "no_shape",
+   "shape": null,
+   "gas": null,
+   "contractEth": null,
+   "getterEth": null
+  },
+  "game_fair": {
+   "verdict": "no_shape",
+   "shape": null,
+   "gas": null,
+   "contractEth": null,
+   "getterEth": null
+  },
+  "fomogame": {
+   "verdict": "no_shape",
+   "shape": null,
+   "gas": null,
+   "contractEth": null,
+   "getterEth": null
+  },
+  "eightherbank": {
+   "verdict": "callable_unpriced",
+   "shape": "bal1+withdraw()",
+   "gas": 43786,
+   "contractEth": 14.1128,
+   "getterEth": 66381
+  },
+  "ibc_lottery": {
+   "verdict": "no_shape",
+   "shape": null,
+   "gas": null,
+   "contractEth": null,
+   "getterEth": null
+  },
+  "foreground": {
+   "verdict": "no_shape",
+   "shape": null,
+   "gas": null,
+   "contractEth": null,
+   "getterEth": null
+  },
+  "unagii": {
+   "verdict": "no_shape",
+   "shape": null,
+   "gas": null,
+   "contractEth": null,
+   "getterEth": null
+  },
+  "contribution_pool": {
+   "verdict": "no_shape",
+   "shape": null,
+   "gas": null,
+   "contractEth": null,
+   "getterEth": null
+  },
+  "potj": {
+   "verdict": "callable_unpriced",
+   "shape": "bal1+withdraw()",
+   "gas": 43504,
+   "contractEth": 9.5957,
+   "getterEth": 43326.799375
+  },
+  "dada": {
+   "verdict": "callable_unpriced",
+   "shape": "bal1+withdraw()",
+   "gas": 38046,
+   "contractEth": 11.2146,
+   "getterEth": null
+  },
+  "diamonddividend": {
+   "verdict": "callable_unpriced",
+   "shape": "bal1+withdraw()",
+   "gas": 43737,
+   "contractEth": 8.1207,
+   "getterEth": 1221.702056
+  },
+  "redchip": {
+   "verdict": "callable_unpriced",
+   "shape": "bal1+withdraw()",
+   "gas": 43904,
+   "contractEth": 10.8973,
+   "getterEth": 1405.343681
+  },
+  "cryptocats_v1": {
+   "verdict": "callable_unpriced",
+   "shape": "bal1+withdraw()",
+   "gas": 35791,
+   "contractEth": 43.685,
+   "getterEth": null
+  },
+  "blackgold": {
+   "verdict": "callable_unpriced",
+   "shape": "bal1+withdraw()",
+   "gas": 43737,
+   "contractEth": 6.0144,
+   "getterEth": 7795.271239
+  },
+  "swisscryptoexchange": {
+   "verdict": "claim_simulated",
+   "shape": "bal2+withdraw(uint256)",
+   "gas": 36977,
+   "contractEth": 7.83,
+   "getterEth": 5.721137
+  },
+  "relayhub_v1": {
+   "verdict": "no_shape",
+   "shape": null,
+   "gas": null,
+   "contractEth": null,
+   "getterEth": null
+  },
+  "ed_fork_6_9eth": {
+   "verdict": "claim_simulated",
+   "shape": "bal2+withdraw(uint256)",
+   "gas": 36882,
+   "contractEth": 6.9155,
+   "getterEth": 1.892
+  },
+  "readyplayerone": {
+   "verdict": "no_shape",
+   "shape": null,
+   "gas": null,
+   "contractEth": null,
+   "getterEth": null
+  },
+  "lscx": {
+   "verdict": "claim_simulated",
+   "shape": "bal2+withdraw(uint256)",
+   "gas": 36906,
+   "contractEth": 6.4508,
+   "getterEth": 2.004951
+  },
+  "spw": {
+   "verdict": "callable_unpriced",
+   "shape": "bal1+withdraw()",
+   "gas": 47026,
+   "contractEth": 7.1981,
+   "getterEth": 36993.453369
+  },
+  "cxxmain": {
+   "verdict": "callable_unpriced",
+   "shape": "bal1+withdraw()",
+   "gas": 43548,
+   "contractEth": 9.5539,
+   "getterEth": 2219.766649
+  },
+  "proofofcraiggrant": {
+   "verdict": "callable_unpriced",
+   "shape": "bal1+withdraw()",
+   "gas": 43526,
+   "contractEth": 6.1756,
+   "getterEth": 6738.986828
+  },
+  "familyonly": {
+   "verdict": "callable_unpriced",
+   "shape": "bal1+withdraw()",
+   "gas": 43737,
+   "contractEth": 7.0173,
+   "getterEth": 1151.397893
+  },
+  "etherc": {
+   "verdict": "claim_simulated",
+   "shape": "bal2+withdraw(uint256)",
+   "gas": 36475,
+   "contractEth": 4.7754,
+   "getterEth": 0.410291
+  },
+  "fomo3d_lightning": {
+   "verdict": "no_shape",
+   "shape": null,
+   "gas": null,
+   "contractEth": null,
+   "getterEth": null
+  },
+  "hourglassx": {
+   "verdict": "callable_unpriced",
+   "shape": "bal1+withdraw()",
+   "gas": 92217,
+   "contractEth": 4.0836,
+   "getterEth": 567.724014
+  },
+  "divsnetwork": {
+   "verdict": "callable_unpriced",
+   "shape": "bal1+withdraw()",
+   "gas": 43592,
+   "contractEth": 4.4896,
+   "getterEth": 0.704896
+  },
+  "twelvehour": {
+   "verdict": "callable_unpriced",
+   "shape": "bal1+exit()",
+   "gas": 61586,
+   "contractEth": 3.1098,
+   "getterEth": 1745.828512
+  },
+  "e25": {
+   "verdict": "callable_unpriced",
+   "shape": "bal1+withdraw()",
+   "gas": 44236,
+   "contractEth": 6.9073,
+   "getterEth": 2055.879657
+  },
+  "bitconnect2": {
+   "verdict": "callable_unpriced",
+   "shape": "bal1+withdraw()",
+   "gas": 43926,
+   "contractEth": 5.4812,
+   "getterEth": 900.577506
+  },
+  "proofofcommunity": {
+   "verdict": "callable_unpriced",
+   "shape": "bal1+withdraw()",
+   "gas": 43548,
+   "contractEth": 6.5978,
+   "getterEth": 1594.103921
+  },
+  "ethdiamond": {
+   "verdict": "callable_unpriced",
+   "shape": "bal1+withdraw()",
+   "gas": 66088,
+   "contractEth": 6.059,
+   "getterEth": 0.738754
+  },
+  "powtf": {
+   "verdict": "callable_unpriced",
+   "shape": "bal1+withdraw()",
+   "gas": 43504,
+   "contractEth": 4.6124,
+   "getterEth": null
+  },
+  "lynia": {
+   "verdict": "callable_unpriced",
+   "shape": "bal1+withdraw()",
+   "gas": 43614,
+   "contractEth": 2.9729,
+   "getterEth": 2450.428015
+  },
+  "bitcratic_v1": {
+   "verdict": "claim_simulated",
+   "shape": "bal2+withdraw(uint256)",
+   "gas": 36511,
+   "contractEth": 3.0616,
+   "getterEth": 1.000602
+  },
+  "ethershares": {
+   "verdict": "callable_unpriced",
+   "shape": "bal1+withdraw()",
+   "gas": 43548,
+   "contractEth": 4.6666,
+   "getterEth": 1921.207384
+  },
+  "pomda": {
+   "verdict": "callable_unpriced",
+   "shape": "bal1+withdraw()",
+   "gas": 43895,
+   "contractEth": 3.7522,
+   "getterEth": 3095.526846
+  },
+  "etherdiamond": {
+   "verdict": "no_shape",
+   "shape": null,
+   "gas": null,
+   "contractEth": null,
+   "getterEth": null
+  },
+  "decentether": {
+   "verdict": "callable_unpriced",
+   "shape": "bal1+withdraw()",
+   "gas": 43917,
+   "contractEth": 3.7474,
+   "getterEth": 1357.949276
+  },
+  "presalepool_b990": {
+   "verdict": "no_shape",
+   "shape": null,
+   "gas": null,
+   "contractEth": null,
+   "getterEth": null
+  },
+  "marketplace": {
+   "verdict": "claim_simulated",
+   "shape": "bal2+withdraw(uint256)",
+   "gas": 36942,
+   "contractEth": 2.4576,
+   "getterEth": 0.2521
+  },
+  "powh_clone1": {
+   "verdict": "callable_unpriced",
+   "shape": "bal1+withdraw()",
+   "gas": 43926,
+   "contractEth": 3.1489,
+   "getterEth": 775.938395
+  },
+  "ethfinex_v2": {
+   "verdict": "no_shape",
+   "shape": null,
+   "gas": null,
+   "contractEth": null,
+   "getterEth": null
+  },
+  "celer_ethpool": {
+   "verdict": "claim_simulated",
+   "shape": "bal1+withdraw(uint256)",
+   "gas": 38268,
+   "contractEth": 70.2605,
+   "getterEth": 12
+  },
+  "pembicoin_ico_admin_unlock": {
+   "verdict": "no_shape",
+   "shape": null,
+   "gas": null,
+   "contractEth": null,
+   "getterEth": null
+  },
+  "bingo4beast_2": {
+   "verdict": "no_shape",
+   "shape": null,
+   "gas": null,
+   "contractEth": null,
+   "getterEth": null
+  },
+  "veil_ether": {
+   "verdict": "claim_simulated",
+   "shape": "bal1+withdraw(uint256)",
+   "gas": 41520,
+   "contractEth": 54.4892,
+   "getterEth": 6.485168
+  },
+  "presalepool_ff2c": {
+   "verdict": "no_shape",
+   "shape": null,
+   "gas": null,
+   "contractEth": null,
+   "getterEth": null
+  },
+  "cryptominertoken": {
+   "verdict": "callable_unpriced",
+   "shape": "bal1+withdraw()",
+   "gas": 43526,
+   "contractEth": 79.3062,
+   "getterEth": 0.000062
+  },
+  "cryptocats_market": {
+   "verdict": "no_shape",
+   "shape": null,
+   "gas": null,
+   "contractEth": null,
+   "getterEth": null
+  },
+  "ethen": {
+   "verdict": "no_shape",
+   "shape": null,
+   "gas": null,
+   "contractEth": null,
+   "getterEth": null
+  },
+  "presalepool_2018": {
+   "verdict": "no_shape",
+   "shape": null,
+   "gas": null,
+   "contractEth": null,
+   "getterEth": null
+  },
+  "fomo3d_short": {
+   "verdict": "no_shape",
+   "shape": null,
+   "gas": null,
+   "contractEth": null,
+   "getterEth": null
+  },
+  "presalepool_d677": {
+   "verdict": "no_shape",
+   "shape": null,
+   "gas": null,
+   "contractEth": null,
+   "getterEth": null
+  },
+  "confideal": {
+   "verdict": "no_shape",
+   "shape": null,
+   "gas": null,
+   "contractEth": null,
+   "getterEth": null
+  },
+  "f3dplus": {
+   "verdict": "no_shape",
+   "shape": null,
+   "gas": null,
+   "contractEth": null,
+   "getterEth": null
+  },
+  "presalepool_796d": {
+   "verdict": "no_shape",
+   "shape": null,
+   "gas": null,
+   "contractEth": null,
+   "getterEth": null
+  },
+  "bluechip": {
+   "verdict": "callable_unpriced",
+   "shape": "bal1+withdraw()",
+   "gas": 43926,
+   "contractEth": 52.0576,
+   "getterEth": 3341.662342
+  },
+  "presalepool_50c1": {
+   "verdict": "no_shape",
+   "shape": null,
+   "gas": null,
+   "contractEth": null,
+   "getterEth": null
+  },
+  "snowstorm_a": {
+   "verdict": "no_shape",
+   "shape": null,
+   "gas": null,
+   "contractEth": null,
+   "getterEth": null
+  },
+  "decentrex": {
+   "verdict": "claim_simulated",
+   "shape": "bal2+withdraw(uint256)",
+   "gas": 36902,
+   "contractEth": 33.0656,
+   "getterEth": 11.063008
+  },
+  "fomo3d_long_v2": {
+   "verdict": "no_shape",
+   "shape": null,
+   "gas": null,
+   "contractEth": null,
+   "getterEth": null
+  },
+  "bitcratic": {
+   "verdict": "claim_simulated",
+   "shape": "bal2+withdraw(uint256)",
+   "gas": 36818,
+   "contractEth": 29.9471,
+   "getterEth": 5
+  },
+  "ethplatinum": {
+   "verdict": "callable_unpriced",
+   "shape": "bal1+withdraw()",
+   "gas": 43570,
+   "contractEth": 20.2175,
+   "getterEth": 3804.428424
+  },
+  "acedapp": {
+   "verdict": "callable_unpriced",
+   "shape": "bal1+withdraw()",
+   "gas": 43917,
+   "contractEth": 92.7313,
+   "getterEth": 400.829697
+  },
+  "rev1": {
+   "verdict": "callable_unpriced",
+   "shape": "bal1+withdraw()",
+   "gas": 43957,
+   "contractEth": 30.2769,
+   "getterEth": 19388.107932
+  },
+  "presalepool_6f40": {
+   "verdict": "no_shape",
+   "shape": null,
+   "gas": null,
+   "contractEth": null,
+   "getterEth": null
+  },
+  "pledge_deposit": {
+   "verdict": "no_shape",
+   "shape": null,
+   "gas": null,
+   "contractEth": null,
+   "getterEth": null
+  },
+  "nexgen": {
+   "verdict": "callable_unpriced",
+   "shape": "bal1+sell(uint256)",
+   "gas": 260041,
+   "contractEth": 11.995,
+   "getterEth": 9297.65
+  },
+  "circles_refund_vault_admin_unlock": {
+   "verdict": "no_shape",
+   "shape": null,
+   "gas": null,
+   "contractEth": null,
+   "getterEth": null
+  },
+  "snowstorm_b": {
+   "verdict": "no_shape",
+   "shape": null,
+   "gas": null,
+   "contractEth": null,
+   "getterEth": null
+  },
+  "powm": {
+   "verdict": "callable_unpriced",
+   "shape": "bal1+withdraw()",
+   "gas": 46689,
+   "contractEth": 25.3371,
+   "getterEth": 0.016336
+  },
+  "fomo3d_short_v2": {
+   "verdict": "no_shape",
+   "shape": null,
+   "gas": null,
+   "contractEth": null,
+   "getterEth": null
+  },
+  "ageofdinos": {
+   "verdict": "no_shape",
+   "shape": null,
+   "gas": null,
+   "contractEth": null,
+   "getterEth": null
+  },
+  "ethpyramid": {
+   "verdict": "callable_unpriced",
+   "shape": "bal1+withdraw()",
+   "gas": 50544,
+   "contractEth": 27.7591,
+   "getterEth": 0.090313
+  },
+  "pooh": {
+   "verdict": "callable_unpriced",
+   "shape": "bal1+withdraw()",
+   "gas": 43588,
+   "contractEth": 15.6124,
+   "getterEth": 18518.766385
+  },
+  "bitconnect_powh": {
+   "verdict": "callable_unpriced",
+   "shape": "bal1+withdraw()",
+   "gas": 43737,
+   "contractEth": 14.6285,
+   "getterEth": 9221.129168
+  },
+  "gavcoin": {
+   "verdict": "no_shape",
+   "shape": null,
+   "gas": null,
+   "contractEth": null,
+   "getterEth": null
+  },
+  "enclavesdex": {
+   "verdict": "no_shape",
+   "shape": null,
+   "gas": null,
+   "contractEth": null,
+   "getterEth": null
+  },
+  "ambassadors_fund": {
+   "verdict": "no_shape",
+   "shape": null,
+   "gas": null,
+   "contractEth": null,
+   "getterEth": null
+  },
+  "coinchangex": {
+   "verdict": "claim_simulated",
+   "shape": "bal2+withdraw(uint256)",
+   "gas": 36940,
+   "contractEth": 17.3478,
+   "getterEth": 6.420831
+  },
+  "etherdelta_v3": {
+   "verdict": "claim_simulated",
+   "shape": "bal2+withdraw(uint256)",
+   "gas": 36498,
+   "contractEth": 16.8366,
+   "getterEth": 11
+  },
+  "redchip2": {
+   "verdict": "callable_unpriced",
+   "shape": "bal1+withdraw()",
+   "gas": 43904,
+   "contractEth": 2.1723,
+   "getterEth": 1433.136009
+  },
+  "upower": {
+   "verdict": "callable_unpriced",
+   "shape": "bal1+withdraw()",
+   "gas": 43548,
+   "contractEth": 2.3499,
+   "getterEth": 1331.678054
+  },
+  "bitox": {
+   "verdict": "claim_simulated",
+   "shape": "bal2+withdraw(uint256)",
+   "gas": 36524,
+   "contractEth": 2.1813,
+   "getterEth": 0.24998
+  },
+  "hourglass_clone7": {
+   "verdict": "callable_unpriced",
+   "shape": "bal1+withdraw()",
+   "gas": 43939,
+   "contractEth": 2.2781,
+   "getterEth": 0.00006
+  },
+  "neufund": {
+   "verdict": "claim_simulated",
+   "shape": "bal1+withdraw(uint256)",
+   "gas": 42729,
+   "contractEth": 3379.4289,
+   "getterEth": 1.069461
+  },
+  "omnidex": {
+   "verdict": "callable_unpriced",
+   "shape": "bal1+withdraw()",
+   "gas": 43614,
+   "contractEth": 1.9753,
+   "getterEth": 15136.221717
+  },
+  "furious": {
+   "verdict": "callable_unpriced",
+   "shape": "bal1+withdraw()",
+   "gas": 66088,
+   "contractEth": 3.1158,
+   "getterEth": 0.646577
+  },
+  "hourglass_clone6": {
+   "verdict": "callable_unpriced",
+   "shape": "bal1+withdraw()",
+   "gas": 43895,
+   "contractEth": 2.8087,
+   "getterEth": 12477.229263
+  },
+  "fairexchange": {
+   "verdict": "callable_unpriced",
+   "shape": "bal1+withdraw()",
+   "gas": 43614,
+   "contractEth": 4.0615,
+   "getterEth": 888.42621
+  },
+  "lockedin": {
+   "verdict": "callable_unpriced",
+   "shape": "bal1+withdraw()",
+   "gas": 43504,
+   "contractEth": 2.691,
+   "getterEth": 0.00002
+  },
+  "neutrino81": {
+   "verdict": "callable_unpriced",
+   "shape": "bal1+withdraw()",
+   "gas": 43764,
+   "contractEth": 3.9688,
+   "getterEth": 38289.7
+  },
+  "ethernext": {
+   "verdict": "claim_simulated",
+   "shape": "bal2+withdraw(uint256)",
+   "gas": 36511,
+   "contractEth": 1.3225,
+   "getterEth": 0.534815
+  },
+  "vuepay": {
+   "verdict": "no_shape",
+   "shape": null,
+   "gas": null,
+   "contractEth": null,
+   "getterEth": null
+  },
+  "polarisdex": {
+   "verdict": "claim_simulated",
+   "shape": "bal2+withdraw(uint256)",
+   "gas": 36494,
+   "contractEth": 1.2066,
+   "getterEth": 0.215131
+  },
+  "seeddex_v3": {
+   "verdict": "claim_simulated",
+   "shape": "bal2+withdraw(uint256)",
+   "gas": 36678,
+   "contractEth": 1.1805,
+   "getterEth": 0.40445
+  },
+  "seeddex_v2": {
+   "verdict": "claim_simulated",
+   "shape": "bal2+withdraw(uint256)",
+   "gas": 36666,
+   "contractEth": 1.2673,
+   "getterEth": 1
+  },
+  "stronghold": {
+   "verdict": "callable_unpriced",
+   "shape": "bal1+withdraw()",
+   "gas": 43926,
+   "contractEth": 2.3386,
+   "getterEth": 212.850341
+  },
+  "ethmall": {
+   "verdict": "claim_simulated",
+   "shape": "bal2+withdraw(uint256)",
+   "gas": 36821,
+   "contractEth": 1.0351,
+   "getterEth": 0.364
+  },
+  "bitconnect3": {
+   "verdict": "callable_unpriced",
+   "shape": "bal1+withdraw()",
+   "gas": 43939,
+   "contractEth": 3.5382,
+   "getterEth": 154535.102306
+  },
+  "extoke": {
+   "verdict": "claim_simulated",
+   "shape": "bal2+withdraw(uint256)",
+   "gas": 36942,
+   "contractEth": 0.9053,
+   "getterEth": 0.21998
+  },
+  "algodex": {
+   "verdict": "claim_simulated",
+   "shape": "bal2+withdraw(uint256)",
+   "gas": 36883,
+   "contractEth": 0.8674,
+   "getterEth": 0.770082
+  },
+  "ndex": {
+   "verdict": "claim_simulated",
+   "shape": "bal2+withdraw(uint256)",
+   "gas": 36494,
+   "contractEth": 0.6392,
+   "getterEth": 0.262089
+  },
+  "powh_clone4": {
+   "verdict": "callable_unpriced",
+   "shape": "bal1+withdraw()",
+   "gas": 43737,
+   "contractEth": 2.0467,
+   "getterEth": 279.863515
+  },
+  "edex": {
+   "verdict": "claim_simulated",
+   "shape": "bal2+withdraw(uint256)",
+   "gas": 36883,
+   "contractEth": 0.5436,
+   "getterEth": 0.301526
+  },
+  "powh_clone3": {
+   "verdict": "callable_unpriced",
+   "shape": "bal1+withdraw()",
+   "gas": 43926,
+   "contractEth": 2.0716,
+   "getterEth": 10000.000001
+  },
+  "tradexone": {
+   "verdict": "claim_simulated",
+   "shape": "bal2+withdraw(uint256)",
+   "gas": 44154,
+   "contractEth": 0.4712,
+   "getterEth": 0.169247
+  },
+  "afrodex": {
+   "verdict": "claim_simulated",
+   "shape": "bal2+withdraw(uint256)",
+   "gas": 36896,
+   "contractEth": 0.4517,
+   "getterEth": 0.131621
+  },
+  "p4rty_dao_vault": {
+   "verdict": "callable_unpriced",
+   "shape": "bal1+withdraw()",
+   "gas": 41129,
+   "contractEth": 0.4305,
+   "getterEth": 20639.272
+  },
+  "unkoin": {
+   "verdict": "callable_unpriced",
+   "shape": "bal1+withdraw()",
+   "gas": 43526,
+   "contractEth": 1.924,
+   "getterEth": 0.027959
+  },
+  "powh_clone2": {
+   "verdict": "callable_unpriced",
+   "shape": "bal1+withdraw()",
+   "gas": 43737,
+   "contractEth": 2.8343,
+   "getterEth": 10509.267049
+  },
+  "spw2": {
+   "verdict": "callable_unpriced",
+   "shape": "bal1+withdraw()",
+   "gas": 43882,
+   "contractEth": 2.0793,
+   "getterEth": 9322.391922
+  },
+  "transit_refund_admin_unlock": {
+   "verdict": "no_shape",
+   "shape": null,
+   "gas": null,
+   "contractEth": null,
+   "getterEth": null
+  },
+  "cryptosurge": {
+   "verdict": "callable_unpriced",
+   "shape": "bal1+withdraw()",
+   "gas": 43948,
+   "contractEth": 2.9613,
+   "getterEth": 171.082596
+  }
+ }
+}
