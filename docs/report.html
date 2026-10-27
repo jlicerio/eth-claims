@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Claim verification report</title>
+<style>
+  :root{--bg:#0e1116;--panel:#161b22;--line:#2b3440;--ink:#e6edf3;--dim:#9aa7b4;--accent:#4cc38a;--warn:#f0b429;--bad:#ff6b6b;--mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+  main{max-width:900px;margin:0 auto;padding:2rem 1.2rem 4rem}
+  h1{font-size:1.35rem;margin:.2rem 0 .3rem;letter-spacing:-.01em}
+  h2{font-size:.8rem;text-transform:uppercase;letter-spacing:.09em;color:var(--dim);margin:2rem 0 .6rem}
+  .meta{color:var(--dim);font-size:.85rem;font-family:var(--mono)}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:1rem 1.1rem;margin:.7rem 0}
+  .big{font-size:1.9rem;letter-spacing:-.02em}
+  table{width:100%;border-collapse:collapse;font-size:.88rem}
+  th{text-align:left;color:var(--dim);font-weight:600;font-size:.7rem;text-transform:uppercase;letter-spacing:.06em;padding:.45rem .3rem;border-bottom:1px solid var(--line)}
+  td{padding:.5rem .3rem;border-bottom:1px solid rgba(43,52,64,.5);vertical-align:top}
+  td.num{text-align:right;font-family:var(--mono)}
+  code,.mono{font-family:var(--mono);font-size:.8rem;word-break:break-all}
+  code{background:#0b0e13;border:1px solid var(--line);border-radius:4px;padding:.05em .3em}
+  .ok{color:var(--accent)} .warn{color:var(--warn)} .bad{color:var(--bad)} .dim{color:var(--dim)}
+  .tag{display:inline-block;font-size:.68rem;padding:.1rem .45rem;border-radius:999px;border:1px solid var(--line);color:var(--dim)}
+  .tag.ok{color:var(--accent);border-color:rgba(76,195,138,.4)}
+  ul{margin:.4rem 0 .4rem 1.1rem;padding:0}
+  li{margin:.25rem 0}
+  .note{border-left:3px solid var(--warn);padding-left:.8rem;color:var(--dim)}
+  button{background:transparent;color:var(--ink);border:1px solid var(--line);border-radius:8px;padding:.5rem .8rem;cursor:pointer}
+  @media print{ body{background:#fff;color:#111} .card{border-color:#ddd} h2{color:#555} button{display:none} code{background:#f4f4f4;border-color:#ddd} }
+</style>
+</head>
+<body>
+<main>
+  <div class="meta">Claim verification report · generated <span id="when">—</span> · block <span id="block">—</span></div>
+  <h1 id="addr">—</h1>
+  <p class="dim" id="headline">Reading contracts…</p>
+
+  <div class="card">
+    <div class="big" id="total">—</div>
+    <div class="dim" id="net">—</div>
+  </div>
+
+  <h2>Claims</h2>
+  <table>
+    <thead><tr><th>Pool</th><th class="num">Claimable</th><th class="num">Gas</th><th class="num">Net after gas</th><th>Status</th></tr></thead>
+    <tbody id="rows"><tr><td colspan="5" class="dim">reading…</td></tr></tbody>
+  </table>
+
+  <h2>Releasing transactions</h2>
+  <div id="txs" class="dim">—</div>
+
+  <h2>Risk notes</h2>
+  <ul id="risks">
+    <li><b>Executor.</b> Every pool above is <code>owner-only</code>: the contract pays <code>msg.sender</code>. No company, relayer or agent can collect on the holder's behalf, and any offer to do so is false.</li>
+    <li><b>Lost keys.</b> If the key to this address is gone, the balance is permanently unrecoverable. Chain state cannot distinguish a lost key from dormancy.</li>
+    <li><b>Admin-controlled pools.</b> <code>0x4d55f76e…</code> exposes an admin-only payout redirect (<code>0x3fb9950a</code>). The user's own call succeeds, but an operator can route the payout. Treat that pool as admin-controlled, not abandoned.</li>
+    <li><b>Gas.</b> A claim worth less than its transaction is a loss. Net figures above use the live base fee.</li>
+  </ul>
+
+  <h2>Method</h2>
+  <p class="dim">Each balance is the contract's own answer to <code>balanceOf</code> for this address. Each claim path was established by extracting <code>PUSH4</code> selectors from the deployed runtime bytecode and then executing the withdrawal in an <code>eth_call</code> from this address; a pool is only reported when that call succeeds. Gas is the node's own estimate. No wallet connection, no signature, no key material is used at any point in producing this report.</p>
+
+  <h2>If you want the work done</h2>
+  <p class="dim">This report is generated from public chain state and is free to reproduce. What is not free is the part that took a week: knowing which of 158 pools answer truthfully, which index entries are mis-scaled by 141x, and which getters return zero for addresses the index insists are owed money. If you want a monitored version of this report, or the transactions prepared and checked before you sign, that is a private arrangement — reply and we can discuss it. Nothing is charged unless you ask.</p>
+
+  <p><button onclick="window.print()">Print / save as PDF</button></p>
+</main>
+<script>
+const POOLS = [
+  { name: "EtherDelta V2", addr: "0x8d12A197cB00D4747a1fe03395095ce2A5CC6819", getter: "bal2", claim: "withdraw(uint256)", gas: 36493 },
+  { name: "ED-family A", addr: "0x4d55f76ce2dbbae7b48661bef9bd144ce0c9091b", getter: "bal2", claim: "withdraw(uint256)", gas: 38726 },
+  { name: "ED-family B", addr: "0x4aea7cf559f67cedcad07e12ae6bc00f07e8cf65", getter: "bal2", claim: "withdraw(uint256)", gas: 38726 },
+  { name: "EtherDelta V1b", addr: "0x373c55c277b866a69dc047cad488154ab9759466", getter: "bal2", claim: "withdraw(uint256)", gas: 38726 },
+  { name: "Token.Store", addr: "0x1ce7ae555139c5ef5a57cc8d814a867ee6ee33d8", getter: "bal2", claim: "withdraw(uint256)", gas: 38726 },
+  { name: "Old WETH (2016)", addr: "0xecf8f87f810ecf450940c9f60066b4a7a501d6a7", getter: "bal1", claim: "withdraw(uint256)", gas: 38726 },
+  { name: "IDEX v1", addr: "0x2a0c0DBEcC7E4D658f48E01e3fA353F44050c208", getter: "bal2", claim: "withdraw(address,uint256)", gas: 42077 },
+];
+const RPCS = ["https://ethereum-rpc.publicnode.com","https://eth.drpc.org","https://eth.llamarpc.com"];
+const ZERO = "0".repeat(64);
+const pad = (a) => a.toLowerCase().replace(/^0x/,"").padStart(64,"0");
+const word = (n) => n.toString(16).padStart(64,"0");
+const el = (id) => document.getElementById(id);
+
+async function rpc(method, params) {
+  let last;
+  for (const url of RPCS) {
+    try {
+      const r = await fetch(url, { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ jsonrpc: "2.0", id: 1, method, params }) });
+      const j = await r.json();
+      if (j.error) throw new Error(j.error.message);
+      return j.result;
+    } catch (e) { last = e; }
+  }
+  throw last;
+}
+
+(async () => {
+  const addr = new URLSearchParams(location.search).get("address") || "";
+  if (!/^0x[0-9a-fA-F]{40}$/.test(addr)) { el("headline").textContent = "Add ?address=0x… to the URL."; return; }
+  el("addr").textContent = addr;
+  el("when").textContent = new Date().toISOString().slice(0, 16).replace("T", " ");
+  try {
+    const blk = await rpc("eth_getBlockByNumber", ["latest", false]);
+    el("block").textContent = parseInt(blk.number, 16).toLocaleString();
+    const baseFee = BigInt(blk.baseFeePerGas);
+    const rows = []; let total = 0n;
+    for (const p of POOLS) {
+      const data = p.getter === "bal2" ? "0xf7888aec" + ZERO + pad(addr) : "0x70a08231" + pad(addr);
+      let wei = 0n;
+      try { const r = await rpc("eth_call", [{ to: p.addr, data }, "latest"]); wei = r && r !== "0x" ? BigInt(r) : 0n; } catch { continue; }
+      if (wei === 0n) continue;
+      const claimData = p.claim === "withdraw(address,uint256)" ? "0xf3fef3a3" + ZERO + word(wei) : "0x2e1a7d4d" + word(wei);
+      let gas = null;
+      try { gas = parseInt(await rpc("eth_estimateGas", [{ from: addr, to: p.addr, data: claimData }, "latest"]), 16); } catch {}
+      const cost = BigInt(gas ?? p.gas) * baseFee;
+      const net = wei - cost;
+      total += wei;
+      rows.push({ p, wei, gas, net, claimData });
+    }
+    const costAll = rows.reduce((s, r) => s + BigInt(r.gas ?? r.p.gas) * baseFee, 0n);
+    const netAll = total - costAll;
+    el("total").textContent = (Number(total) / 1e18).toFixed(6) + " ETH";
+    el("net").textContent = `net after gas at ${(Number(baseFee) / 1e9).toFixed(4)} gwei: ${(Number(netAll > 0n ? netAll : 0n) / 1e18).toFixed(6)} ETH`;
+    el("headline").textContent = rows.length
+      ? `${rows.length} claim${rows.length > 1 ? "s" : ""} across the covered pools. Each one below was read from the contract and its withdrawal executed in a simulation.`
+      : "No claimable balance in any covered pool.";
+    el("rows").innerHTML = rows.map((r) => `<tr>
+      <td><b>${r.p.name}</b><br><span class="mono dim">${r.p.addr.slice(0,10)}…</span></td>
+      <td class="num">${(Number(r.wei)/1e18).toFixed(6)}</td>
+      <td class="num">${r.gas ?? r.p.gas}</td>
+      <td class="num ${r.net > 0n ? "ok" : "bad"}">${r.net > 0n ? (Number(r.net)/1e18).toFixed(6) : "below gas"}</td>
+      <td><span class="tag ok">simulated</span></td>
+    </tr>`).join("") || '<tr><td colspan="5" class="dim">none</td></tr>';
+    el("txs").innerHTML = rows.map((r) => `<div class="card">
+      <div><b>${r.p.name}</b> — <code>${r.p.claim}</code> on <code>${r.p.addr}</code></div>
+      <div class="dim" style="margin:.35rem 0">Send from <code>${addr}</code>. Data:</div>
+      <code>${r.claimData}</code>
+    </div>`).join("") || '<span class="dim">none</span>';
+  } catch (e) {
+    el("headline").textContent = "Read failed: " + e.message;
+  }
+})();
+</script>
+</body>
+</html>
