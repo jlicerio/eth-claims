@@ -49,7 +49,7 @@
 <body>
 <main>
   <h1>Abandoned contract claims</h1>
-  <p class="lead">An index of Ethereum contracts that still hold user funds, with the difference that matters: which claim paths have actually been <b>verified against the contract</b>. An index tells you where to look; only a simulated claim from the holder's address tells you whether it is collectable.</p>
+  <p class="lead">An index of Ethereum contracts that still hold user funds, with the difference that matters: <b>claim simulated</b> means the withdrawal was executed in an <code>eth_call</code> from a real holder address and succeeded — not that a selector was merely found in a bytecode dump. An index tells you where to look; only a simulated claim from the holder's address tells you whether it is collectable.</p>
 
   <div class="stats">
     <div class="stat"><b id="s-total">—</b><span>ETH claimable</span></div>
@@ -89,14 +89,14 @@
 
 <script>
 const VERIFIED = {
-  idex:        { status: "ok",   label: "verified", note: "withdraw(address,uint256) 0xf3fef3a3 · 42,077 gas · simulated" },
-  etherdelta:  { status: "ok",   label: "verified", note: "withdraw(uint256) 0x2e1a7d4d · simulated" },
-  unknown_dex: { status: "ok",   label: "verified", note: "EtherDelta fork, admin payout redirect at slot 9" },
-  etherdelta_m0:{ status: "ok",  label: "verified", note: "EtherDelta v0 fork · withdraw(uint256)" },
-  etherdelta_m1:{ status: "ok",  label: "verified", note: "EtherDelta v1b · withdraw(uint256)" },
-  tokenstore:  { status: "ok",   label: "verified", note: "withdraw(uint256) 0x2e1a7d4d" },
-  old_weth:    { status: "ok",   label: "verified", note: "2016 WETH · balanceOf(address) 0x70a08231" },
-  powh3d:      { status: "ok",   label: "verified", note: "exit() 0xe9fad8ee · price_function · index overstated 38%" },
+  idex:        { status: "ok",   label: "verified", note: "withdraw(address,uint256) 0xf3fef3a3 · 946.35 ETH sim · 42,077 gas" },
+  etherdelta:  { status: "ok",   label: "claim simulated", note: "withdraw(uint256) 0x2e1a7d4d · simulated from the 604.22 ETH holder" },
+  unknown_dex: { status: "ok",   label: "claim simulated", note: "ED fork, admin payout redirect slot 9 · 385.05 ETH sim · 39,187 gas" },
+  etherdelta_m0:{ status: "ok",  label: "claim simulated", note: "ED v0 fork · 109.41 ETH sim · 36,850 gas" },
+  etherdelta_m1:{ status: "ok",  label: "claim simulated", note: "ED v1b · 25.00 ETH sim · 36,898 gas" },
+  tokenstore:  { status: "ok",   label: "claim simulated", note: "169.22 ETH sim · 36,532 gas" },
+  old_weth:    { status: "ok",   label: "claim simulated", note: "2016 WETH · 328.02 ETH sim · 36,241 gas" },
+  powh3d:      { status: "ok",   label: "verified", note: "exit() 0xe9fad8ee · 87.83 ETH via price function · index 38% high" },
   lastwinner:  { status: "no",   label: "disproven", note: "getter returns 0 for the indexed holder — do not quote" },
 };
 
