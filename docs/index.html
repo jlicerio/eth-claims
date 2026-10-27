@@ -55,7 +55,7 @@
     <div class="stat"><b id="s-total">—</b><span>ETH claimable</span></div>
     <div class="stat"><b id="s-pools">—</b><span>ETH-denominated pools</span></div>
     <div class="stat"><b id="s-verified">—</b><span>verified claim paths</span></div>
-    <div class="stat"><b id="s-disproven">—</b><span>disproven</span></div>
+    <div class="stat"><b id="s-noshape">—</b><span>no verified shape</span></div>
   </div>
 
   <section class="panel">
@@ -83,7 +83,11 @@
   <footer>
     Method: denomination check · <code>PUSH4</code> selector provenance from runtime bytecode · getter read for a specific address · <code>eth_call</code> the claim from that address · executor class (<code>owner-only</code> vs <code>third-party</code>).
     Source and evidence: <a href="https://github.com/jlicerio/eth-claims">github.com/jlicerio/eth-claims</a>.
-    Token-denominated files are excluded from the ETH total by design; they need a per-pool rate.
+    <b>Categories.</b> <span class="badge ok">claim simulated</span> = the withdrawal executed in an <code>eth_call</code> from a real holder and the getter is the payout.
+    <span class="badge warn">callable · token-priced</span> = a claim call succeeds, but the getter returns tokens, so the amount is not ETH until the pool's price function is read.
+    <span class="badge no">no verified shape</span> = none of the probed getter/claim pairs matched. That means <i>not examined successfully</i>, not disproven.
+    One pool is genuinely disproven: LastWinner, whose getter returns zero for the holder its index lists at 163.42 ETH.
+    Token-denominated files are excluded from the ETH total by design.
   </footer>
 </main>
 
@@ -135,7 +139,7 @@ Promise.all([fetch("pools.json").then((r) => r.json()), fetch("verified.json").t
   el("s-pools").textContent = data.count;
   const vals = Object.values(VERIFIED);
   el("s-verified").textContent = vals.filter((v) => v.verdict === "claim_simulated").length;
-  el("s-disproven").textContent = vals.filter((v) => v.verdict === "no_shape").length;
+  el("s-noshape").textContent = vals.filter((v) => v.verdict === "no_shape").length;
   render();
 }).catch(() => { el("rows").innerHTML = '<tr><td colspan="6" class="hint">could not load pools.json</td></tr>'; });
 

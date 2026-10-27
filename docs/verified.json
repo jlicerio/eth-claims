@@ -1,1111 +1,1273 @@
 {
- "generated": "2026-10-27T15:19:46.678Z",
+ "generated": "2026-10-27T15:21:25.152Z",
+ "notes": {
+  "getterValue": "value the contract getter returned for the largest holder in that pool; unit says whether it is ETH or tokens",
+  "poolEth": "contract ETH balance, not the sum of holder claims"
+ },
  "pools": {
   "idex": {
    "verdict": "claim_simulated",
    "shape": "bal2+withdraw(address,uint256)",
    "gas": 42077,
    "contractEth": 15673.2597,
-   "getterEth": 946.354123
+   "getterValue": 946.354123,
+   "getterUnit": "ETH"
   },
   "etherdelta": {
    "verdict": "claim_simulated",
    "shape": "bal2+withdraw(uint256)",
    "gas": 36918,
    "contractEth": 15160.6317,
-   "getterEth": 604.223195
+   "getterValue": 604.223195,
+   "getterUnit": "ETH"
   },
   "powh3d": {
    "verdict": "callable_unpriced",
    "shape": "bal1+withdraw()",
    "gas": 43737,
    "contractEth": 2026.7189,
-   "getterEth": 29318.925397
+   "getterValue": 29318.925397,
+   "getterUnit": "tokens"
   },
   "unknown_dex": {
    "verdict": "claim_simulated",
    "shape": "bal2+withdraw(uint256)",
    "gas": 39187,
    "contractEth": 2479.0815,
-   "getterEth": 385.05
+   "getterValue": 385.05,
+   "getterUnit": "ETH"
   },
   "lastwinner": {
    "verdict": "no_shape",
    "shape": null,
    "gas": null,
    "contractEth": null,
-   "getterEth": null
+   "getterValue": null,
+   "getterUnit": null
   },
   "old_weth": {
    "verdict": "claim_simulated",
    "shape": "bal1+withdraw(uint256)",
    "gas": 36241,
    "contractEth": 1511.347,
-   "getterEth": 328.017
+   "getterValue": 328.017,
+   "getterUnit": "ETH"
   },
   "fomo3d_long": {
    "verdict": "no_shape",
    "shape": null,
    "gas": null,
    "contractEth": null,
-   "getterEth": null
+   "getterValue": null,
+   "getterUnit": null
   },
   "ethfinex": {
    "verdict": "no_shape",
    "shape": null,
    "gas": null,
    "contractEth": null,
-   "getterEth": null
+   "getterValue": null,
+   "getterUnit": null
   },
   "singularx": {
    "verdict": "claim_simulated",
    "shape": "bal2+withdraw(uint256)",
    "gas": 36896,
    "contractEth": 854.9829,
-   "getterEth": 113.154289
+   "getterValue": 113.154289,
+   "getterUnit": "ETH"
   },
   "gandhiji": {
    "verdict": "callable_unpriced",
    "shape": "bal1+withdraw()",
    "gas": 43737,
    "contractEth": 658.4567,
-   "getterEth": 31011.342281
+   "getterValue": 31011.342281,
+   "getterUnit": "tokens"
   },
   "oxo_rewards": {
    "verdict": "no_shape",
    "shape": null,
    "gas": null,
    "contractEth": null,
-   "getterEth": null
+   "getterValue": null,
+   "getterUnit": null
   },
   "tokenstore": {
    "verdict": "claim_simulated",
    "shape": "bal2+withdraw(uint256)",
    "gas": 36532,
    "contractEth": 632.5434,
-   "getterEth": 169.224276
+   "getterValue": 169.224276,
+   "getterUnit": "ETH"
   },
   "switcheo_v2": {
    "verdict": "no_shape",
    "shape": null,
    "gas": null,
    "contractEth": null,
-   "getterEth": null
+   "getterValue": null,
+   "getterUnit": null
   },
   "keep_bonding": {
    "verdict": "no_shape",
    "shape": null,
    "gas": null,
    "contractEth": null,
-   "getterEth": null
+   "getterValue": null,
+   "getterUnit": null
   },
   "etherdelta_m0": {
    "verdict": "claim_simulated",
    "shape": "bal2+withdraw(uint256)",
    "gas": 36850,
    "contractEth": 220.3809,
-   "getterEth": 109.40925
+   "getterValue": 109.40925,
+   "getterUnit": "ETH"
   },
   "maker_weth": {
    "verdict": "claim_simulated",
    "shape": "bal1+withdraw(uint256)",
    "gas": 41279,
    "contractEth": 162.0375,
-   "getterEth": 19.7511
+   "getterValue": 19.7511,
+   "getterUnit": "ETH"
   },
   "lido_anchor_vault": {
    "verdict": "no_shape",
    "shape": null,
    "gas": null,
    "contractEth": null,
-   "getterEth": null
+   "getterValue": null,
+   "getterUnit": null
   },
   "r1_exchange": {
    "verdict": "no_shape",
    "shape": null,
    "gas": null,
    "contractEth": null,
-   "getterEth": null
+   "getterValue": null,
+   "getterUnit": null
   },
   "zethr": {
    "verdict": "callable_unpriced",
    "shape": "bal1+exit()",
    "gas": 82603,
    "contractEth": 275.941,
-   "getterEth": 31298.010372
+   "getterValue": 31298.010372,
+   "getterUnit": "tokens"
   },
   "fomo3d_ultra": {
    "verdict": "no_shape",
    "shape": null,
    "gas": null,
    "contractEth": null,
-   "getterEth": null
+   "getterValue": null,
+   "getterUnit": null
   },
   "etherdelta_m1": {
    "verdict": "claim_simulated",
    "shape": "bal2+withdraw(uint256)",
    "gas": 36898,
    "contractEth": 122.2734,
-   "getterEth": 25.000194
+   "getterValue": 25.000194,
+   "getterUnit": "ETH"
   },
   "bingo4beast_1": {
    "verdict": "no_shape",
    "shape": null,
    "gas": null,
    "contractEth": null,
-   "getterEth": null
+   "getterValue": null,
+   "getterUnit": null
   },
   "spankchain_auction": {
    "verdict": "no_shape",
    "shape": null,
    "gas": null,
    "contractEth": null,
-   "getterEth": null
+   "getterValue": null,
+   "getterUnit": null
   },
   "metadrop_webaverse": {
    "verdict": "no_shape",
    "shape": null,
    "gas": null,
    "contractEth": null,
-   "getterEth": null
+   "getterValue": null,
+   "getterUnit": null
   },
   "dailydivs": {
    "verdict": "callable_unpriced",
    "shape": "bal1+withdraw()",
    "gas": 45446,
    "contractEth": 109.6804,
-   "getterEth": 226622.875022
+   "getterValue": 226622.875022,
+   "getterUnit": "tokens"
   },
   "switchdex": {
    "verdict": "claim_simulated",
    "shape": "bal2+withdraw(uint256)",
    "gas": 36918,
    "contractEth": 100.9905,
-   "getterEth": 10.00153
+   "getterValue": 10.00153,
+   "getterUnit": "ETH"
   },
   "remove_putin_bounty_admin_unlock": {
    "verdict": "no_shape",
    "shape": null,
    "gas": null,
    "contractEth": null,
-   "getterEth": null
+   "getterValue": null,
+   "getterUnit": null
   },
   "presalepool_48c1": {
    "verdict": "no_shape",
    "shape": null,
    "gas": null,
    "contractEth": null,
-   "getterEth": null
+   "getterValue": null,
+   "getterUnit": null
   },
   "bancor_eth": {
    "verdict": "claim_simulated",
    "shape": "bal1+withdraw(uint256)",
    "gas": 42058,
    "contractEth": 94.4243,
-   "getterEth": 9.976704
+   "getterValue": 9.976704,
+   "getterUnit": "ETH"
   },
   "presalepool_f058": {
    "verdict": "no_shape",
    "shape": null,
    "gas": null,
    "contractEth": null,
-   "getterEth": null
+   "getterValue": null,
+   "getterUnit": null
   },
   "ld3d_official": {
    "verdict": "no_shape",
    "shape": null,
    "gas": null,
    "contractEth": null,
-   "getterEth": null
+   "getterValue": null,
+   "getterUnit": null
   },
   "tweetmarket": {
    "verdict": "no_shape",
    "shape": null,
    "gas": null,
    "contractEth": null,
-   "getterEth": null
+   "getterValue": null,
+   "getterUnit": null
   },
   "joyso": {
    "verdict": "no_shape",
    "shape": null,
    "gas": null,
    "contractEth": null,
-   "getterEth": null
+   "getterValue": null,
+   "getterUnit": null
   },
   "cryptophunks_market": {
    "verdict": "no_shape",
    "shape": null,
    "gas": null,
    "contractEth": null,
-   "getterEth": null
+   "getterValue": null,
+   "getterUnit": null
   },
   "statusbuyer": {
    "verdict": "no_shape",
    "shape": null,
    "gas": null,
    "contractEth": null,
-   "getterEth": null
+   "getterValue": null,
+   "getterUnit": null
   },
   "fomo3d_quick": {
    "verdict": "no_shape",
    "shape": null,
    "gas": null,
    "contractEth": null,
-   "getterEth": null
+   "getterValue": null,
+   "getterUnit": null
   },
   "unknown_dex_5995": {
    "verdict": "claim_simulated",
    "shape": "bal2+withdraw(uint256)",
    "gas": 44051,
    "contractEth": 75.9803,
-   "getterEth": 49.63
+   "getterValue": 49.63,
+   "getterUnit": "ETH"
   },
   "eks": {
    "verdict": "callable_unpriced",
    "shape": "bal1+withdraw()",
    "gas": 48393,
    "contractEth": 82.8485,
-   "getterEth": 25.7
+   "getterValue": 25.7,
+   "getterUnit": "tokens"
   },
   "zethr_main": {
    "verdict": "callable_unpriced",
    "shape": "bal1+exit()",
    "gas": 101560,
    "contractEth": 111.6839,
-   "getterEth": 6361.589779
+   "getterValue": 6361.589779,
+   "getterUnit": "tokens"
   },
   "fomojp": {
    "verdict": "no_shape",
    "shape": null,
    "gas": null,
    "contractEth": null,
-   "getterEth": null
+   "getterValue": null,
+   "getterUnit": null
   },
   "sportcrypt": {
    "verdict": "no_shape",
    "shape": null,
    "gas": null,
    "contractEth": null,
-   "getterEth": null
+   "getterValue": null,
+   "getterUnit": null
   },
   "fomo": {
    "verdict": "no_shape",
    "shape": null,
    "gas": null,
    "contractEth": null,
-   "getterEth": null
+   "getterValue": null,
+   "getterUnit": null
   },
   "just_hodl_it": {
    "verdict": "no_shape",
    "shape": null,
    "gas": null,
    "contractEth": null,
-   "getterEth": null
+   "getterValue": null,
+   "getterUnit": null
   },
   "personabid": {
    "verdict": "no_shape",
    "shape": null,
    "gas": null,
    "contractEth": null,
-   "getterEth": null
+   "getterValue": null,
+   "getterUnit": null
   },
   "game_fair": {
    "verdict": "no_shape",
    "shape": null,
    "gas": null,
    "contractEth": null,
-   "getterEth": null
+   "getterValue": null,
+   "getterUnit": null
   },
   "fomogame": {
    "verdict": "no_shape",
    "shape": null,
    "gas": null,
    "contractEth": null,
-   "getterEth": null
+   "getterValue": null,
+   "getterUnit": null
   },
   "eightherbank": {
    "verdict": "callable_unpriced",
    "shape": "bal1+withdraw()",
    "gas": 43786,
    "contractEth": 14.1128,
-   "getterEth": 66381
+   "getterValue": 66381,
+   "getterUnit": "tokens"
   },
   "ibc_lottery": {
    "verdict": "no_shape",
    "shape": null,
    "gas": null,
    "contractEth": null,
-   "getterEth": null
+   "getterValue": null,
+   "getterUnit": null
   },
   "foreground": {
    "verdict": "no_shape",
    "shape": null,
    "gas": null,
    "contractEth": null,
-   "getterEth": null
+   "getterValue": null,
+   "getterUnit": null
   },
   "unagii": {
    "verdict": "no_shape",
    "shape": null,
    "gas": null,
    "contractEth": null,
-   "getterEth": null
+   "getterValue": null,
+   "getterUnit": null
   },
   "contribution_pool": {
    "verdict": "no_shape",
    "shape": null,
    "gas": null,
    "contractEth": null,
-   "getterEth": null
+   "getterValue": null,
+   "getterUnit": null
   },
   "potj": {
    "verdict": "callable_unpriced",
    "shape": "bal1+withdraw()",
    "gas": 43504,
    "contractEth": 9.5957,
-   "getterEth": 43326.799375
+   "getterValue": 43326.799375,
+   "getterUnit": "tokens"
   },
   "dada": {
    "verdict": "callable_unpriced",
    "shape": "bal1+withdraw()",
    "gas": 38046,
    "contractEth": 11.2146,
-   "getterEth": null
+   "getterValue": null,
+   "getterUnit": "tokens"
   },
   "diamonddividend": {
    "verdict": "callable_unpriced",
    "shape": "bal1+withdraw()",
    "gas": 43737,
    "contractEth": 8.1207,
-   "getterEth": 1221.702056
+   "getterValue": 1221.702056,
+   "getterUnit": "tokens"
   },
   "redchip": {
    "verdict": "callable_unpriced",
    "shape": "bal1+withdraw()",
    "gas": 43904,
    "contractEth": 10.8973,
-   "getterEth": 1405.343681
+   "getterValue": 1405.343681,
+   "getterUnit": "tokens"
   },
   "cryptocats_v1": {
    "verdict": "callable_unpriced",
    "shape": "bal1+withdraw()",
    "gas": 35791,
    "contractEth": 43.685,
-   "getterEth": null
+   "getterValue": null,
+   "getterUnit": "tokens"
   },
   "blackgold": {
    "verdict": "callable_unpriced",
    "shape": "bal1+withdraw()",
    "gas": 43737,
    "contractEth": 6.0144,
-   "getterEth": 7795.271239
+   "getterValue": 7795.271239,
+   "getterUnit": "tokens"
   },
   "swisscryptoexchange": {
    "verdict": "claim_simulated",
    "shape": "bal2+withdraw(uint256)",
    "gas": 36977,
    "contractEth": 7.83,
-   "getterEth": 5.721137
+   "getterValue": 5.721137,
+   "getterUnit": "ETH"
   },
   "relayhub_v1": {
    "verdict": "no_shape",
    "shape": null,
    "gas": null,
    "contractEth": null,
-   "getterEth": null
+   "getterValue": null,
+   "getterUnit": null
   },
   "ed_fork_6_9eth": {
    "verdict": "claim_simulated",
    "shape": "bal2+withdraw(uint256)",
    "gas": 36882,
    "contractEth": 6.9155,
-   "getterEth": 1.892
+   "getterValue": 1.892,
+   "getterUnit": "ETH"
   },
   "readyplayerone": {
    "verdict": "no_shape",
    "shape": null,
    "gas": null,
    "contractEth": null,
-   "getterEth": null
+   "getterValue": null,
+   "getterUnit": null
   },
   "lscx": {
    "verdict": "claim_simulated",
    "shape": "bal2+withdraw(uint256)",
    "gas": 36906,
    "contractEth": 6.4508,
-   "getterEth": 2.004951
+   "getterValue": 2.004951,
+   "getterUnit": "ETH"
   },
   "spw": {
    "verdict": "callable_unpriced",
    "shape": "bal1+withdraw()",
    "gas": 47026,
    "contractEth": 7.1981,
-   "getterEth": 36993.453369
+   "getterValue": 36993.453369,
+   "getterUnit": "tokens"
   },
   "cxxmain": {
    "verdict": "callable_unpriced",
    "shape": "bal1+withdraw()",
    "gas": 43548,
    "contractEth": 9.5539,
-   "getterEth": 2219.766649
+   "getterValue": 2219.766649,
+   "getterUnit": "tokens"
   },
   "proofofcraiggrant": {
    "verdict": "callable_unpriced",
    "shape": "bal1+withdraw()",
    "gas": 43526,
    "contractEth": 6.1756,
-   "getterEth": 6738.986828
+   "getterValue": 6738.986828,
+   "getterUnit": "tokens"
   },
   "familyonly": {
    "verdict": "callable_unpriced",
    "shape": "bal1+withdraw()",
    "gas": 43737,
    "contractEth": 7.0173,
-   "getterEth": 1151.397893
+   "getterValue": 1151.397893,
+   "getterUnit": "tokens"
   },
   "etherc": {
    "verdict": "claim_simulated",
    "shape": "bal2+withdraw(uint256)",
    "gas": 36475,
    "contractEth": 4.7754,
-   "getterEth": 0.410291
+   "getterValue": 0.410291,
+   "getterUnit": "ETH"
   },
   "fomo3d_lightning": {
    "verdict": "no_shape",
    "shape": null,
    "gas": null,
    "contractEth": null,
-   "getterEth": null
+   "getterValue": null,
+   "getterUnit": null
   },
   "hourglassx": {
    "verdict": "callable_unpriced",
    "shape": "bal1+withdraw()",
    "gas": 92217,
    "contractEth": 4.0836,
-   "getterEth": 567.724014
+   "getterValue": 567.724014,
+   "getterUnit": "tokens"
   },
   "divsnetwork": {
    "verdict": "callable_unpriced",
    "shape": "bal1+withdraw()",
    "gas": 43592,
    "contractEth": 4.4896,
-   "getterEth": 0.704896
+   "getterValue": 0.704896,
+   "getterUnit": "tokens"
   },
   "twelvehour": {
    "verdict": "callable_unpriced",
    "shape": "bal1+exit()",
    "gas": 61586,
    "contractEth": 3.1098,
-   "getterEth": 1745.828512
+   "getterValue": 1745.828512,
+   "getterUnit": "tokens"
   },
   "e25": {
    "verdict": "callable_unpriced",
    "shape": "bal1+withdraw()",
    "gas": 44236,
    "contractEth": 6.9073,
-   "getterEth": 2055.879657
+   "getterValue": 2055.879657,
+   "getterUnit": "tokens"
   },
   "bitconnect2": {
    "verdict": "callable_unpriced",
    "shape": "bal1+withdraw()",
    "gas": 43926,
    "contractEth": 5.4812,
-   "getterEth": 900.577506
+   "getterValue": 900.577506,
+   "getterUnit": "tokens"
   },
   "proofofcommunity": {
    "verdict": "callable_unpriced",
    "shape": "bal1+withdraw()",
    "gas": 43548,
    "contractEth": 6.5978,
-   "getterEth": 1594.103921
+   "getterValue": 1594.103921,
+   "getterUnit": "tokens"
   },
   "ethdiamond": {
    "verdict": "callable_unpriced",
    "shape": "bal1+withdraw()",
    "gas": 66088,
    "contractEth": 6.059,
-   "getterEth": 0.738754
+   "getterValue": 0.738754,
+   "getterUnit": "tokens"
   },
   "powtf": {
    "verdict": "callable_unpriced",
    "shape": "bal1+withdraw()",
    "gas": 43504,
    "contractEth": 4.6124,
-   "getterEth": null
+   "getterValue": null,
+   "getterUnit": "tokens"
   },
   "lynia": {
    "verdict": "callable_unpriced",
    "shape": "bal1+withdraw()",
    "gas": 43614,
    "contractEth": 2.9729,
-   "getterEth": 2450.428015
+   "getterValue": 2450.428015,
+   "getterUnit": "tokens"
   },
   "bitcratic_v1": {
    "verdict": "claim_simulated",
    "shape": "bal2+withdraw(uint256)",
    "gas": 36511,
    "contractEth": 3.0616,
-   "getterEth": 1.000602
+   "getterValue": 1.000602,
+   "getterUnit": "ETH"
   },
   "ethershares": {
    "verdict": "callable_unpriced",
    "shape": "bal1+withdraw()",
    "gas": 43548,
    "contractEth": 4.6666,
-   "getterEth": 1921.207384
+   "getterValue": 1921.207384,
+   "getterUnit": "tokens"
   },
   "pomda": {
    "verdict": "callable_unpriced",
    "shape": "bal1+withdraw()",
    "gas": 43895,
    "contractEth": 3.7522,
-   "getterEth": 3095.526846
+   "getterValue": 3095.526846,
+   "getterUnit": "tokens"
   },
   "etherdiamond": {
    "verdict": "no_shape",
    "shape": null,
    "gas": null,
    "contractEth": null,
-   "getterEth": null
+   "getterValue": null,
+   "getterUnit": null
   },
   "decentether": {
    "verdict": "callable_unpriced",
    "shape": "bal1+withdraw()",
    "gas": 43917,
    "contractEth": 3.7474,
-   "getterEth": 1357.949276
+   "getterValue": 1357.949276,
+   "getterUnit": "tokens"
   },
   "presalepool_b990": {
    "verdict": "no_shape",
    "shape": null,
    "gas": null,
    "contractEth": null,
-   "getterEth": null
+   "getterValue": null,
+   "getterUnit": null
   },
   "marketplace": {
    "verdict": "claim_simulated",
    "shape": "bal2+withdraw(uint256)",
    "gas": 36942,
    "contractEth": 2.4576,
-   "getterEth": 0.2521
+   "getterValue": 0.2521,
+   "getterUnit": "ETH"
   },
   "powh_clone1": {
    "verdict": "callable_unpriced",
    "shape": "bal1+withdraw()",
    "gas": 43926,
    "contractEth": 3.1489,
-   "getterEth": 775.938395
+   "getterValue": 775.938395,
+   "getterUnit": "tokens"
   },
   "ethfinex_v2": {
    "verdict": "no_shape",
    "shape": null,
    "gas": null,
    "contractEth": null,
-   "getterEth": null
+   "getterValue": null,
+   "getterUnit": null
   },
   "celer_ethpool": {
    "verdict": "claim_simulated",
    "shape": "bal1+withdraw(uint256)",
    "gas": 38268,
    "contractEth": 70.2605,
-   "getterEth": 12
+   "getterValue": 12,
+   "getterUnit": "ETH"
   },
   "pembicoin_ico_admin_unlock": {
    "verdict": "no_shape",
    "shape": null,
    "gas": null,
    "contractEth": null,
-   "getterEth": null
+   "getterValue": null,
+   "getterUnit": null
   },
   "bingo4beast_2": {
    "verdict": "no_shape",
    "shape": null,
    "gas": null,
    "contractEth": null,
-   "getterEth": null
+   "getterValue": null,
+   "getterUnit": null
   },
   "veil_ether": {
    "verdict": "claim_simulated",
    "shape": "bal1+withdraw(uint256)",
    "gas": 41520,
    "contractEth": 54.4892,
-   "getterEth": 6.485168
+   "getterValue": 6.485168,
+   "getterUnit": "ETH"
   },
   "presalepool_ff2c": {
    "verdict": "no_shape",
    "shape": null,
    "gas": null,
    "contractEth": null,
-   "getterEth": null
+   "getterValue": null,
+   "getterUnit": null
   },
   "cryptominertoken": {
    "verdict": "callable_unpriced",
    "shape": "bal1+withdraw()",
    "gas": 43526,
    "contractEth": 79.3062,
-   "getterEth": 0.000062
+   "getterValue": 0.000062,
+   "getterUnit": "tokens"
   },
   "cryptocats_market": {
    "verdict": "no_shape",
    "shape": null,
    "gas": null,
    "contractEth": null,
-   "getterEth": null
+   "getterValue": null,
+   "getterUnit": null
   },
   "ethen": {
    "verdict": "no_shape",
    "shape": null,
    "gas": null,
    "contractEth": null,
-   "getterEth": null
+   "getterValue": null,
+   "getterUnit": null
   },
   "presalepool_2018": {
    "verdict": "no_shape",
    "shape": null,
    "gas": null,
    "contractEth": null,
-   "getterEth": null
+   "getterValue": null,
+   "getterUnit": null
   },
   "fomo3d_short": {
    "verdict": "no_shape",
    "shape": null,
    "gas": null,
    "contractEth": null,
-   "getterEth": null
+   "getterValue": null,
+   "getterUnit": null
   },
   "presalepool_d677": {
    "verdict": "no_shape",
    "shape": null,
    "gas": null,
    "contractEth": null,
-   "getterEth": null
+   "getterValue": null,
+   "getterUnit": null
   },
   "confideal": {
    "verdict": "no_shape",
    "shape": null,
    "gas": null,
    "contractEth": null,
-   "getterEth": null
+   "getterValue": null,
+   "getterUnit": null
   },
   "f3dplus": {
    "verdict": "no_shape",
    "shape": null,
    "gas": null,
    "contractEth": null,
-   "getterEth": null
+   "getterValue": null,
+   "getterUnit": null
   },
   "presalepool_796d": {
    "verdict": "no_shape",
    "shape": null,
    "gas": null,
    "contractEth": null,
-   "getterEth": null
+   "getterValue": null,
+   "getterUnit": null
   },
   "bluechip": {
    "verdict": "callable_unpriced",
    "shape": "bal1+withdraw()",
    "gas": 43926,
    "contractEth": 52.0576,
-   "getterEth": 3341.662342
+   "getterValue": 3341.662342,
+   "getterUnit": "tokens"
   },
   "presalepool_50c1": {
    "verdict": "no_shape",
    "shape": null,
    "gas": null,
    "contractEth": null,
-   "getterEth": null
+   "getterValue": null,
+   "getterUnit": null
   },
   "snowstorm_a": {
    "verdict": "no_shape",
    "shape": null,
    "gas": null,
    "contractEth": null,
-   "getterEth": null
+   "getterValue": null,
+   "getterUnit": null
   },
   "decentrex": {
    "verdict": "claim_simulated",
    "shape": "bal2+withdraw(uint256)",
    "gas": 36902,
    "contractEth": 33.0656,
-   "getterEth": 11.063008
+   "getterValue": 11.063008,
+   "getterUnit": "ETH"
   },
   "fomo3d_long_v2": {
    "verdict": "no_shape",
    "shape": null,
    "gas": null,
    "contractEth": null,
-   "getterEth": null
+   "getterValue": null,
+   "getterUnit": null
   },
   "bitcratic": {
    "verdict": "claim_simulated",
    "shape": "bal2+withdraw(uint256)",
    "gas": 36818,
    "contractEth": 29.9471,
-   "getterEth": 5
+   "getterValue": 5,
+   "getterUnit": "ETH"
   },
   "ethplatinum": {
    "verdict": "callable_unpriced",
    "shape": "bal1+withdraw()",
    "gas": 43570,
    "contractEth": 20.2175,
-   "getterEth": 3804.428424
+   "getterValue": 3804.428424,
+   "getterUnit": "tokens"
   },
   "acedapp": {
    "verdict": "callable_unpriced",
    "shape": "bal1+withdraw()",
    "gas": 43917,
    "contractEth": 92.7313,
-   "getterEth": 400.829697
+   "getterValue": 400.829697,
+   "getterUnit": "tokens"
   },
   "rev1": {
    "verdict": "callable_unpriced",
    "shape": "bal1+withdraw()",
    "gas": 43957,
    "contractEth": 30.2769,
-   "getterEth": 19388.107932
+   "getterValue": 19388.107932,
+   "getterUnit": "tokens"
   },
   "presalepool_6f40": {
    "verdict": "no_shape",
    "shape": null,
    "gas": null,
    "contractEth": null,
-   "getterEth": null
+   "getterValue": null,
+   "getterUnit": null
   },
   "pledge_deposit": {
    "verdict": "no_shape",
    "shape": null,
    "gas": null,
    "contractEth": null,
-   "getterEth": null
+   "getterValue": null,
+   "getterUnit": null
   },
   "nexgen": {
    "verdict": "callable_unpriced",
    "shape": "bal1+sell(uint256)",
    "gas": 260041,
    "contractEth": 11.995,
-   "getterEth": 9297.65
+   "getterValue": 9297.65,
+   "getterUnit": "tokens"
   },
   "circles_refund_vault_admin_unlock": {
    "verdict": "no_shape",
    "shape": null,
    "gas": null,
    "contractEth": null,
-   "getterEth": null
+   "getterValue": null,
+   "getterUnit": null
   },
   "snowstorm_b": {
    "verdict": "no_shape",
    "shape": null,
    "gas": null,
    "contractEth": null,
-   "getterEth": null
+   "getterValue": null,
+   "getterUnit": null
   },
   "powm": {
    "verdict": "callable_unpriced",
    "shape": "bal1+withdraw()",
    "gas": 46689,
    "contractEth": 25.3371,
-   "getterEth": 0.016336
+   "getterValue": 0.016336,
+   "getterUnit": "tokens"
   },
   "fomo3d_short_v2": {
    "verdict": "no_shape",
    "shape": null,
    "gas": null,
    "contractEth": null,
-   "getterEth": null
+   "getterValue": null,
+   "getterUnit": null
   },
   "ageofdinos": {
    "verdict": "no_shape",
    "shape": null,
    "gas": null,
    "contractEth": null,
-   "getterEth": null
+   "getterValue": null,
+   "getterUnit": null
   },
   "ethpyramid": {
    "verdict": "callable_unpriced",
    "shape": "bal1+withdraw()",
    "gas": 50544,
    "contractEth": 27.7591,
-   "getterEth": 0.090313
+   "getterValue": 0.090313,
+   "getterUnit": "tokens"
   },
   "pooh": {
    "verdict": "callable_unpriced",
    "shape": "bal1+withdraw()",
    "gas": 43588,
    "contractEth": 15.6124,
-   "getterEth": 18518.766385
+   "getterValue": 18518.766385,
+   "getterUnit": "tokens"
   },
   "bitconnect_powh": {
    "verdict": "callable_unpriced",
    "shape": "bal1+withdraw()",
    "gas": 43737,
    "contractEth": 14.6285,
-   "getterEth": 9221.129168
+   "getterValue": 9221.129168,
+   "getterUnit": "tokens"
   },
   "gavcoin": {
    "verdict": "no_shape",
    "shape": null,
    "gas": null,
    "contractEth": null,
-   "getterEth": null
+   "getterValue": null,
+   "getterUnit": null
   },
   "enclavesdex": {
    "verdict": "no_shape",
    "shape": null,
    "gas": null,
    "contractEth": null,
-   "getterEth": null
+   "getterValue": null,
+   "getterUnit": null
   },
   "ambassadors_fund": {
    "verdict": "no_shape",
    "shape": null,
    "gas": null,
    "contractEth": null,
-   "getterEth": null
+   "getterValue": null,
+   "getterUnit": null
   },
   "coinchangex": {
    "verdict": "claim_simulated",
    "shape": "bal2+withdraw(uint256)",
    "gas": 36940,
    "contractEth": 17.3478,
-   "getterEth": 6.420831
+   "getterValue": 6.420831,
+   "getterUnit": "ETH"
   },
   "etherdelta_v3": {
    "verdict": "claim_simulated",
    "shape": "bal2+withdraw(uint256)",
    "gas": 36498,
    "contractEth": 16.8366,
-   "getterEth": 11
+   "getterValue": 11,
+   "getterUnit": "ETH"
   },
   "redchip2": {
    "verdict": "callable_unpriced",
    "shape": "bal1+withdraw()",
    "gas": 43904,
    "contractEth": 2.1723,
-   "getterEth": 1433.136009
+   "getterValue": 1433.136009,
+   "getterUnit": "tokens"
   },
   "upower": {
    "verdict": "callable_unpriced",
    "shape": "bal1+withdraw()",
    "gas": 43548,
    "contractEth": 2.3499,
-   "getterEth": 1331.678054
+   "getterValue": 1331.678054,
+   "getterUnit": "tokens"
   },
   "bitox": {
    "verdict": "claim_simulated",
    "shape": "bal2+withdraw(uint256)",
    "gas": 36524,
    "contractEth": 2.1813,
-   "getterEth": 0.24998
+   "getterValue": 0.24998,
+   "getterUnit": "ETH"
   },
   "hourglass_clone7": {
    "verdict": "callable_unpriced",
    "shape": "bal1+withdraw()",
    "gas": 43939,
    "contractEth": 2.2781,
-   "getterEth": 0.00006
+   "getterValue": 0.00006,
+   "getterUnit": "tokens"
   },
   "neufund": {
    "verdict": "claim_simulated",
    "shape": "bal1+withdraw(uint256)",
    "gas": 42729,
    "contractEth": 3379.4289,
-   "getterEth": 1.069461
+   "getterValue": 1.069461,
+   "getterUnit": "ETH"
   },
   "omnidex": {
    "verdict": "callable_unpriced",
    "shape": "bal1+withdraw()",
    "gas": 43614,
    "contractEth": 1.9753,
-   "getterEth": 15136.221717
+   "getterValue": 15136.221717,
+   "getterUnit": "tokens"
   },
   "furious": {
    "verdict": "callable_unpriced",
    "shape": "bal1+withdraw()",
    "gas": 66088,
    "contractEth": 3.1158,
-   "getterEth": 0.646577
+   "getterValue": 0.646577,
+   "getterUnit": "tokens"
   },
   "hourglass_clone6": {
    "verdict": "callable_unpriced",
    "shape": "bal1+withdraw()",
    "gas": 43895,
    "contractEth": 2.8087,
-   "getterEth": 12477.229263
+   "getterValue": 12477.229263,
+   "getterUnit": "tokens"
   },
   "fairexchange": {
    "verdict": "callable_unpriced",
    "shape": "bal1+withdraw()",
    "gas": 43614,
    "contractEth": 4.0615,
-   "getterEth": 888.42621
+   "getterValue": 888.42621,
+   "getterUnit": "tokens"
   },
   "lockedin": {
    "verdict": "callable_unpriced",
    "shape": "bal1+withdraw()",
    "gas": 43504,
    "contractEth": 2.691,
-   "getterEth": 0.00002
+   "getterValue": 0.00002,
+   "getterUnit": "tokens"
   },
   "neutrino81": {
    "verdict": "callable_unpriced",
    "shape": "bal1+withdraw()",
    "gas": 43764,
    "contractEth": 3.9688,
-   "getterEth": 38289.7
+   "getterValue": 38289.7,
+   "getterUnit": "tokens"
   },
   "ethernext": {
    "verdict": "claim_simulated",
    "shape": "bal2+withdraw(uint256)",
    "gas": 36511,
    "contractEth": 1.3225,
-   "getterEth": 0.534815
+   "getterValue": 0.534815,
+   "getterUnit": "ETH"
   },
   "vuepay": {
    "verdict": "no_shape",
    "shape": null,
    "gas": null,
    "contractEth": null,
-   "getterEth": null
+   "getterValue": null,
+   "getterUnit": null
   },
   "polarisdex": {
    "verdict": "claim_simulated",
    "shape": "bal2+withdraw(uint256)",
    "gas": 36494,
    "contractEth": 1.2066,
-   "getterEth": 0.215131
+   "getterValue": 0.215131,
+   "getterUnit": "ETH"
   },
   "seeddex_v3": {
    "verdict": "claim_simulated",
    "shape": "bal2+withdraw(uint256)",
    "gas": 36678,
    "contractEth": 1.1805,
-   "getterEth": 0.40445
+   "getterValue": 0.40445,
+   "getterUnit": "ETH"
   },
   "seeddex_v2": {
    "verdict": "claim_simulated",
    "shape": "bal2+withdraw(uint256)",
    "gas": 36666,
    "contractEth": 1.2673,
-   "getterEth": 1
+   "getterValue": 1,
+   "getterUnit": "ETH"
   },
   "stronghold": {
    "verdict": "callable_unpriced",
    "shape": "bal1+withdraw()",
    "gas": 43926,
    "contractEth": 2.3386,
-   "getterEth": 212.850341
+   "getterValue": 212.850341,
+   "getterUnit": "tokens"
   },
   "ethmall": {
    "verdict": "claim_simulated",
    "shape": "bal2+withdraw(uint256)",
    "gas": 36821,
    "contractEth": 1.0351,
-   "getterEth": 0.364
+   "getterValue": 0.364,
+   "getterUnit": "ETH"
   },
   "bitconnect3": {
    "verdict": "callable_unpriced",
    "shape": "bal1+withdraw()",
    "gas": 43939,
    "contractEth": 3.5382,
-   "getterEth": 154535.102306
+   "getterValue": 154535.102306,
+   "getterUnit": "tokens"
   },
   "extoke": {
    "verdict": "claim_simulated",
    "shape": "bal2+withdraw(uint256)",
    "gas": 36942,
    "contractEth": 0.9053,
-   "getterEth": 0.21998
+   "getterValue": 0.21998,
+   "getterUnit": "ETH"
   },
   "algodex": {
    "verdict": "claim_simulated",
    "shape": "bal2+withdraw(uint256)",
    "gas": 36883,
    "contractEth": 0.8674,
-   "getterEth": 0.770082
+   "getterValue": 0.770082,
+   "getterUnit": "ETH"
   },
   "ndex": {
    "verdict": "claim_simulated",
    "shape": "bal2+withdraw(uint256)",
    "gas": 36494,
    "contractEth": 0.6392,
-   "getterEth": 0.262089
+   "getterValue": 0.262089,
+   "getterUnit": "ETH"
   },
   "powh_clone4": {
    "verdict": "callable_unpriced",
    "shape": "bal1+withdraw()",
    "gas": 43737,
    "contractEth": 2.0467,
-   "getterEth": 279.863515
+   "getterValue": 279.863515,
+   "getterUnit": "tokens"
   },
   "edex": {
    "verdict": "claim_simulated",
    "shape": "bal2+withdraw(uint256)",
    "gas": 36883,
    "contractEth": 0.5436,
-   "getterEth": 0.301526
+   "getterValue": 0.301526,
+   "getterUnit": "ETH"
   },
   "powh_clone3": {
    "verdict": "callable_unpriced",
    "shape": "bal1+withdraw()",
    "gas": 43926,
    "contractEth": 2.0716,
-   "getterEth": 10000.000001
+   "getterValue": 10000.000001,
+   "getterUnit": "tokens"
   },
   "tradexone": {
    "verdict": "claim_simulated",
    "shape": "bal2+withdraw(uint256)",
    "gas": 44154,
    "contractEth": 0.4712,
-   "getterEth": 0.169247
+   "getterValue": 0.169247,
+   "getterUnit": "ETH"
   },
   "afrodex": {
    "verdict": "claim_simulated",
    "shape": "bal2+withdraw(uint256)",
    "gas": 36896,
    "contractEth": 0.4517,
-   "getterEth": 0.131621
+   "getterValue": 0.131621,
+   "getterUnit": "ETH"
   },
   "p4rty_dao_vault": {
    "verdict": "callable_unpriced",
    "shape": "bal1+withdraw()",
    "gas": 41129,
    "contractEth": 0.4305,
-   "getterEth": 20639.272
+   "getterValue": 20639.272,
+   "getterUnit": "tokens"
   },
   "unkoin": {
    "verdict": "callable_unpriced",
    "shape": "bal1+withdraw()",
    "gas": 43526,
    "contractEth": 1.924,
-   "getterEth": 0.027959
+   "getterValue": 0.027959,
+   "getterUnit": "tokens"
   },
   "powh_clone2": {
    "verdict": "callable_unpriced",
    "shape": "bal1+withdraw()",
    "gas": 43737,
    "contractEth": 2.8343,
-   "getterEth": 10509.267049
+   "getterValue": 10509.267049,
+   "getterUnit": "tokens"
   },
   "spw2": {
    "verdict": "callable_unpriced",
    "shape": "bal1+withdraw()",
    "gas": 43882,
    "contractEth": 2.0793,
-   "getterEth": 9322.391922
+   "getterValue": 9322.391922,
+   "getterUnit": "tokens"
   },
   "transit_refund_admin_unlock": {
    "verdict": "no_shape",
    "shape": null,
    "gas": null,
    "contractEth": null,
-   "getterEth": null
+   "getterValue": null,
+   "getterUnit": null
   },
   "cryptosurge": {
    "verdict": "callable_unpriced",
    "shape": "bal1+withdraw()",
    "gas": 43948,
    "contractEth": 2.9613,
-   "getterEth": 171.082596
+   "getterValue": 171.082596,
+   "getterUnit": "tokens"
   }
  }
 }
