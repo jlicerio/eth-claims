@@ -26,7 +26,12 @@ For every pool, in this order:
 2. **Selector provenance.** Extract `PUSH4` constants from the deployed runtime bytecode and match them against signatures. Never trust an ABI or an index's claim path.
 3. **Getter read.** Call the contract's own balance function for a specific holder.
 4. **Claim simulation.** `eth_call` the actual withdrawal from the holder's address. A revert means there is nothing collectable at that address, whatever the index says.
-5. **Payout proof tier.** Record how the payout was established:
+5. **Executor.** Who can trigger the claim:
+   - `owner-only` — the contract pays `msg.sender` and only the holder can collect (EtherDelta, IDEX). No relayer, no public-good claimer, no incentive contract can help.
+   - `third-party` — anyone can trigger the payout to the registered recipient: merkle airdrops (anyone may submit the proof for a recipient), L2 bridge finalisations, and contract-held balances where a caller can poke the contract on its own behalf.
+   
+   This axis decides whether a public-good claimer is even possible for a pool, and it is the single most consequential distinction when comparing pools across chains.
+6. **Payout proof tier.** Record how the payout was established:
    - `getter` — the claim pays `balances[msg.sender]` and the getter is that same mapping (EtherDelta, IDEX).
    - `price_function` — the contract's own curve math prices the position (`calculateEthereumReceived`).
    - `trace` — a `debug_traceCall` state diff shows value reaching the holder. Often unavailable on free RPC tiers; say so rather than implying it.
@@ -52,7 +57,9 @@ The honest ETH-denominated total across the index is **49,914 ETH across 182 poo
 
 ## The constraint nobody can engineer around
 
-`withdraw()` pays `msg.sender`. There is no relayer, no batching, no incentive contract that can collect on someone else's behalf. Only 4 claimant addresses are contracts (115 ETH); for the rest, the key is decisive.
+For `owner-only` pools — the EtherDelta family, IDEX — `withdraw()` pays `msg.sender`, so there is no relayer, no batching and no incentive contract that can collect on someone else's behalf. Only 4 claimant addresses are contracts (115 ETH); for the rest, the key is decisive.
+
+That is a property of those contracts, not of claims in general. Merkle airdrops are `third-party` (anyone can submit a proof for the recipient; the recipient never has to act), L2 bridge finalisations are permissionless, and a contract holding a balance can often be triggered by a caller. Reporting "unclaimable" without naming the executor is how a research repo ends up wrong about things that are routine elsewhere.
 
 Of the 400 largest holders, 97% signed at least one transaction historically but only 4.5% have signed one in the last twelve months. Chain state cannot distinguish "lost the key" from "doesn't care". Where a key is genuinely lost, the balance is unrecoverable — and no tool, fee or contract changes that.
 
