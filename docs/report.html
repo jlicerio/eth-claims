@@ -61,9 +61,9 @@
   <h2>Method</h2>
   <p class="dim">Each balance is the contract's own answer to <code>balanceOf</code> for this address. Each claim path was established by extracting <code>PUSH4</code> selectors from the deployed runtime bytecode and then executing the withdrawal in an <code>eth_call</code> from this address; a pool is only reported when that call succeeds. Gas is the node's own estimate. No wallet connection, no signature, no key material is used at any point in producing this report.</p>
 
-  <h2>If you want the work done</h2>
-  <p class="dim">This report is generated from public chain state and costs nothing. What is not free is the part that came before it: establishing which of 158 pools answer truthfully, which index entries are mis-scaled by 141x, which getters return zero for addresses an index insists are owed money, and which contracts have an admin who can redirect a payout.</p>
-  <p class="dim">If you want a version of this monitored, or the transactions prepared and double-checked before you sign, that is a private arrangement: reply and we will discuss it. The terms are simple and always the same — <b>no custody of your funds, no keys, no upfront payment</b>. A success fee is voluntary and only ever paid after money has actually reached your address. If a claim turns out to be worth less than its gas, we will tell you that instead of taking the job.</p>
+  <h2>About this research</h2>
+  <p class="dim">This report is generated from public chain state and costs nothing to reproduce. It is the output of a verification pass over 158 ETH-denominated pools: which getters answer truthfully, which index entries are mis-scaled (one by 141x), which contracts have an admin who can redirect a payout, and which claim calls actually execute from a holder address.</p>
+  <p class="dim">No fee is charged for this report, no wallet is connected, and no key material is ever requested. Where a balance is worth less than its transaction, the report says so rather than encouraging it.</p>
   <p><button onclick="window.print()">Print / save as PDF</button></p>
 </main>
 <script>
