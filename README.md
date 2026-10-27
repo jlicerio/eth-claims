@@ -75,6 +75,19 @@ At 27,745 gas and 0.045 gwei, a claim notice costs about 0.0000013 ETH, so the t
 
 L2s need one extra check: a claim contract may have a withdrawal delay or a sequencer-side queue, so a successful `eth_call` proves the call is accepted, not that funds arrive immediately.
 
+## Agent skill
+
+`skill/` contains an installable agent skill for the common request "do I have money stuck in old contracts, and can you claim it for me":
+
+```bash
+node skill/check_claims.ts 0xYourAddress          # human-readable
+node skill/check_claims.ts 0xYourAddress --json   # machine-readable
+```
+
+It is read-only and never asks for a key. It returns per pool: balance, net after gas, the exact calldata, and the executor class. The skill's own safety rules are in `skill/SKILL.md` — chiefly that an agent may only sign when the owner explicitly authorised that transaction, and that a checker demanding a wallet connection just to display a balance is a drainer.
+
+The distinction that matters for "can an agent claim this for me": **owner-only** claims pay `msg.sender`, so no agent can collect for a passive user; **third-party** claims (airdrops, bridge finalisations) can be submitted for the recipient. Only the second class is a service an agent can perform unilaterally.
+
 ## Reproducing
 
 ```bash
